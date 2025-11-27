@@ -36,7 +36,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`site-header ${isScrolled ? 'scrolled' : ''} ${isHome ? 'home-mode' : ''}`}>
       {/* Top Bar */}
       <div className="top-bar">
         <div className="top-bar-content">
