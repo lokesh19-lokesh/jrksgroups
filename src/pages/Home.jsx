@@ -117,6 +117,7 @@ const Home = () => {
       <section className="section-container" style={{
         position: 'relative',
         backgroundImage: `url(${businessBg})`,
+        backgroundColor: '#003366', // Fallback color
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         padding: '5rem 2rem',
