@@ -357,8 +357,39 @@ body.dark-mode .search-overlay input {
 
 /* Responsive Navbar */
 @media (max-width: 1024px) {
+
   .site-header {
     position: relative;
+    background-color: #FFF8E7;
+  }
+
+  .site-header.home-transparent {
+    position: absolute;
+    background-color: transparent;
+  }
+
+  .site-header.home-transparent .top-bar,
+  .site-header.home-transparent .navbar {
+    background-color: transparent;
+  }
+
+  /* Keep boxes on mobile for readability if transparent, or adjust as needed.
+     User previously wanted them removed on solid background.
+     If transparent, we probably need them or white text.
+     Let's keep the boxes but maybe adjust size if needed.
+     Actually, let's revert the "Remove boxes on mobile" block or adjust it.
+  */
+  .site-header.home-transparent .navbar-links a,
+  .site-header.home-transparent .dropdown-toggle,
+  .site-header.home-transparent .navbar-icons a {
+    /* Revert to desktop styles (boxes) or keep transparent if user wants clean look.
+       Given "black text", boxes are safer.
+       Let's comment out the removal so it inherits desktop styles (boxes).
+    */
+    /* background-color: transparent; */
+    /* box-shadow: none; */
+    /* padding: 1rem; */
+    /* color: black; */
   }
 
   .top-bar {
@@ -406,6 +437,12 @@ body.dark-mode .search-overlay input {
     width: 100%;
     align-items: flex-start;
     padding-bottom: 1rem;
+    background-color: #FFF8E7;
+    /* Ensure menu background is solid */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
   }
 
   .navbar-menu.active {
@@ -855,14 +892,39 @@ body.dark-mode .search-overlay input {
 .site-header.home-transparent .top-links a,
 .site-header.home-transparent .dealer-info,
 .site-header.home-transparent .navbar-links a,
-.site-header.home-transparent .navbar-icons a,
 .site-header.home-transparent .dropdown-toggle {
-  color: white;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  /* Make it slightly bolder for visibility */
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  /* padding: 0.3rem 0.8rem; */
+  /* border-radius: 4px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  margin: 0 0.2rem;
+  /* Add spacing between boxes */
+}
+
+.site-header.home-transparent .dealer-info {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  /* Ensure box wraps text */
+}
+
+.site-header.home-transparent .navbar-icons a {
+  color: black;
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  /* padding: 0.5rem; */
+  /* border-radius: 50%; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .site-header.home-transparent .navbar-links>li>a::after,
 .site-header.home-transparent .dropdown-toggle::after {
-  background-color: white;
+  display: none;
+  /* Remove underline when using boxes */
 }
 
 /* Scrolled State (Revert to Solid) */
@@ -885,6 +947,11 @@ body.dark-mode .search-overlay input {
 .site-header.home-transparent.scrolled .dropdown-toggle {
   color: #333;
   /* Revert to dark text */
+  background-color: transparent;
+  padding: 0.5rem 0;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
 }
 
 .site-header.home-transparent.scrolled .navbar-links>li>a::after,

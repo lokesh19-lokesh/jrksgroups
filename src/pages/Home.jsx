@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import s1 from '../assets/s1.jpeg';
+import s1 from '../assets/s12.jpg';
 import s2 from '../assets/s2.jpeg';
 import s3 from '../assets/s3.jpeg';
 
@@ -14,7 +14,7 @@ const Home = () => {
     },
     {
       id: 2,
-      title: "Jrks Traders",
+      title: "JRKS Traders",
       subtitle: "Your trusted partner for steel trading and industrial raw materials.",
       image: s2
     },
