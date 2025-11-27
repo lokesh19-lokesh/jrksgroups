@@ -10,6 +10,7 @@ import JrksIndustrialConsultantServices from './pages/JrksIndustrialConsultantSe
 import Career from './pages/Career';
 import Contact from './pages/Contact';
 import FraudAlert from './pages/FraudAlert';
+import NewsMedia from './pages/NewsMedia';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="career" element={<Career />} />
           <Route path="contact" element={<Contact />} />
           <Route path="fraud-alert" element={<FraudAlert />} />
+          <Route path="news-media" element={<NewsMedia />} />
         </Route>
       </Routes>
     </BrowserRouter>

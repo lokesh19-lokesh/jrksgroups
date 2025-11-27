@@ -48,6 +48,7 @@ const Navbar = () => {
 
         <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
           <ul className="navbar-links">
+            <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
             <li><Link to="/about" onClick={toggleMenu}>About</Link></li>
 
             <li className={`dropdown ${isDropdownOpen ? 'open' : ''}`} onClick={toggleDropdown}>
@@ -60,10 +61,9 @@ const Navbar = () => {
               </ul>
             </li>
 
-            <li><Link to="#" onClick={toggleMenu}>Sustainability</Link></li>
-            <li><Link to="#" onClick={toggleMenu}>Investors</Link></li>
+
             <li><Link to="/career" onClick={toggleMenu}>Careers</Link></li>
-            <li><Link to="#" onClick={toggleMenu}>News & Media</Link></li>
+            <li><Link to="/news-media" onClick={toggleMenu}>News & Media</Link></li>
           </ul>
 
           <div className="navbar-icons">
