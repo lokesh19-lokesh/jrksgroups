@@ -914,38 +914,26 @@ body.dark-mode .search-overlay input {
 .site-header.home-transparent .dealer-info,
 .site-header.home-transparent .navbar-links a,
 .site-header.home-transparent .dropdown-toggle {
-  color: rgb(255, 255, 255);
-  font-weight: 600;
-  /* Make it slightly bolder for visibility */
-  /* background-color: rgba(255, 255, 255, 0.7); */
-  /* padding: 0.3rem 0.8rem; */
-  /* border-radius: 4px; */
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-  margin: 0 0.2rem;
-  /* Add spacing between boxes */
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  /* Add shadow for readability */
 }
 
 .site-header.home-transparent .dealer-info {
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  /* Ensure box wraps text */
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
 }
 
 .site-header.home-transparent .navbar-icons a {
-  color: black;
-  /* background-color: rgba(255, 255, 255, 0.7); */
-  /* padding: 0.5rem; */
-  /* border-radius: 50%; */
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .site-header.home-transparent .navbar-links>li>a::after,
 .site-header.home-transparent .dropdown-toggle::after {
-  display: none;
-  /* Remove underline when using boxes */
+  background-color: #fff;
+  /* White underline for transparent header */
 }
 
 /* Scrolled State (Revert to Solid) */
@@ -988,4 +976,23 @@ body.dark-mode .search-overlay input {
 
 .site-header.home-transparent .dropdown-menu a {
   color: #333;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fade-in-up {
+  animation-name: fadeInUp;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
 }

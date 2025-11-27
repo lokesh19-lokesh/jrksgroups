@@ -114,6 +114,19 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="section-container" style={{ backgroundColor: '#fff', paddingBottom: '2rem' }}>
+        <div className="section-title">
+          <h2>Corporate Overview</h2>
+          <div className="divider"></div>
+        </div>
+        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ fontSize: '1.2rem', color: '#555', lineHeight: '1.8' }}>
+            <strong>Jrks Group</strong> is a diversified conglomerate with a commanding presence in <strong>Steel Trading, Power Systems, Financial Services, Industrial Consultancy, Infrastructure, and Education</strong>.
+            Driven by a vision of excellence and a commitment to nation-building, we empower industries and enrich lives through our multifaceted ventures.
+          </p>
+        </div>
+      </section>
+
       <section className="section-container" style={{
         position: 'relative',
         backgroundImage: `url(${businessBg})`,
@@ -121,7 +134,7 @@ const Home = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         padding: '5rem 2rem',
-        marginTop: '2rem'
+        marginTop: '0'
       }}>
         <div style={{
           position: 'absolute',
@@ -129,16 +142,16 @@ const Home = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.7)',
+          backgroundColor: 'rgba(0, 0, 0, 0.8)', // Darker overlay for better text contrast
           zIndex: 1
         }}></div>
 
         <div style={{ position: 'relative', zIndex: 2 }}>
           <div className="section-title">
-            <h2 style={{ color: 'white' }}>Our Businesses</h2>
-            <div className="divider"></div>
-            <p style={{ marginTop: '1rem', color: '#f0f0f0' }}>
-              Driving value through diverse business interests.
+            <h2 style={{ color: 'white' }}>Our Group Companies</h2>
+            <div className="divider" style={{ backgroundColor: '#D4AF37' }}></div>
+            <p style={{ marginTop: '1rem', color: '#f0f0f0', fontSize: '1.1rem' }}>
+              A synergy of specialized verticals driving value and innovation.
             </p>
           </div>
 
@@ -146,8 +159,12 @@ const Home = () => {
             {businesses.map((business, index) => (
               <div
                 key={index}
-                className="business-card"
-                style={{ backgroundColor: business.bgColor, color: business.textColor }}
+                className="business-card fade-in-up"
+                style={{
+                  backgroundColor: business.bgColor,
+                  color: business.textColor,
+                  animationDelay: `${index * 0.1}s`
+                }}
               >
                 <div className="card-image" style={{ backgroundImage: `url(${business.image})` }}></div>
                 <div className="card-content">
@@ -158,25 +175,12 @@ const Home = () => {
                     className="card-link"
                     style={{ color: business.textColor }}
                   >
-                    Learn More
+                    Visit Company Page
                   </Link>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section-container" style={{ backgroundColor: '#f4f4f4' }}>
-        <div className="section-title">
-          <h2>Who We Are</h2>
-          <div className="divider"></div>
-        </div>
-        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ fontSize: '1.1rem', color: '#555' }}>
-            Jrks Group is a conglomerate with a strong footprint in Steel Trading, Power Systems, Financial Services, and Industrial Consultancy.
-            Inspired by the vision of building a self-reliant India, we strive to deliver excellence in every venture we undertake.
-          </p>
         </div>
       </section>
     </div>
