@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import s1 from '../assets/s1.jpeg';
+import s2 from '../assets/s2.jpeg';
+import s3 from '../assets/s3.jpeg';
 
 const Home = () => {
   const slides = [
@@ -7,19 +10,19 @@ const Home = () => {
       id: 1,
       title: "Universal Power Systems",
       subtitle: "Leading solutions in power management and industrial energy systems.",
-      image: "https://images.unsplash.com/photo-1565610222536-ef125c59da2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: s1
     },
     {
       id: 2,
       title: "Jrks Traders",
       subtitle: "Your trusted partner for steel trading and industrial raw materials.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: s2
     },
     {
       id: 3,
       title: "NRS First Capital",
       subtitle: "Financial services and capital management for sustainable growth.",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: s3
     },
     {
       id: 4,
@@ -40,7 +43,7 @@ const Home = () => {
 
   return (
     <div>
-      <section className="hero-section" style={{ backgroundImage: `linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url(${slides[currentSlide].image})` }}>
+      <section className="hero-section" style={{ backgroundImage: `url(${slides[currentSlide].image})` }}>
         <div className="hero-content">
           <h1>{slides[currentSlide].title}</h1>
           <p>{slides[currentSlide].subtitle}</p>

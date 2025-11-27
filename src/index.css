@@ -522,8 +522,9 @@ body.dark-mode .search-overlay input {
 /* Hero Section */
 .hero-section {
   position: relative;
-  height: 80vh;
-  background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+  height: 100vh;
+  background-color: #003366;
+  /* Fallback color */
   /* Placeholder Image */
   background-size: cover;
   background-position: center;
@@ -544,13 +545,15 @@ body.dark-mode .search-overlay input {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  opacity: 0.9;
+  opacity: 1;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 500;
 }
 
 .cta-button {
@@ -801,6 +804,7 @@ body.dark-mode .search-overlay input {
   background-color: var(--primary-color);
   color: white;
 }
+
 /* Slider Dots */
 .slider-dots {
   position: absolute;
@@ -822,7 +826,8 @@ body.dark-mode .search-overlay input {
 }
 
 .dot.active {
-  background-color: #D4AF37; /* Gold Accent */
+  background-color: #D4AF37;
+  /* Gold Accent */
   transform: scale(1.2);
 }
 
@@ -830,3 +835,69 @@ body.dark-mode .search-overlay input {
   transition: background-image 1s ease-in-out;
 }
 
+
+/* Transparent Navbar Styles */
+.site-header.home-transparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.site-header.home-transparent .top-bar,
+.site-header.home-transparent .navbar {
+  background-color: transparent;
+  border-bottom: none;
+}
+
+.site-header.home-transparent .top-links a,
+.site-header.home-transparent .dealer-info,
+.site-header.home-transparent .navbar-links a,
+.site-header.home-transparent .navbar-icons a,
+.site-header.home-transparent .dropdown-toggle {
+  color: white;
+}
+
+.site-header.home-transparent .navbar-links>li>a::after,
+.site-header.home-transparent .dropdown-toggle::after {
+  background-color: white;
+}
+
+/* Scrolled State (Revert to Solid) */
+.site-header.home-transparent.scrolled {
+  position: fixed;
+  background-color: #FFF8E7;
+  /* Light Cream */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.site-header.home-transparent.scrolled .top-bar,
+.site-header.home-transparent.scrolled .navbar {
+  background-color: #FFF8E7;
+}
+
+.site-header.home-transparent.scrolled .top-links a,
+.site-header.home-transparent.scrolled .dealer-info,
+.site-header.home-transparent.scrolled .navbar-links a,
+.site-header.home-transparent.scrolled .navbar-icons a,
+.site-header.home-transparent.scrolled .dropdown-toggle {
+  color: #333;
+  /* Revert to dark text */
+}
+
+.site-header.home-transparent.scrolled .navbar-links>li>a::after,
+.site-header.home-transparent.scrolled .dropdown-toggle::after {
+  background-color: #d4af37;
+  /* Revert to gold underline */
+}
+
+/* Ensure dropdowns are still readable */
+.site-header.home-transparent .dropdown-menu {
+  background-color: white;
+}
+
+.site-header.home-transparent .dropdown-menu a {
+  color: #333;
+}
