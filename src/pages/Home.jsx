@@ -1,14 +1,59 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+  const slides = [
+    {
+      id: 1,
+      title: "Universal Power Systems",
+      subtitle: "Leading solutions in power management and industrial energy systems.",
+      image: "https://images.unsplash.com/photo-1565610222536-ef125c59da2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: 2,
+      title: "Jrks Traders",
+      subtitle: "Your trusted partner for steel trading and industrial raw materials.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: 3,
+      title: "NRS First Capital",
+      subtitle: "Financial services and capital management for sustainable growth.",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: 4,
+      title: "Jrks Industrial Consultant Services",
+      subtitle: "Expert industrial consultancy to optimize your business operations.",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    }
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [currentSlide]); // Restart timer on slide change
+
   return (
     <div>
-      <section className="hero-section">
+      <section className="hero-section" style={{ backgroundImage: `linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url(${slides[currentSlide].image})` }}>
         <div className="hero-content">
-          <h1>Growth is Life</h1>
-          <p>Jrks Group is committed to innovation, excellence, and sustainable growth across diverse sectors.</p>
+          <h1>{slides[currentSlide].title}</h1>
+          <p>{slides[currentSlide].subtitle}</p>
           <Link to="/contact" className="cta-button">Partner With Us</Link>
+        </div>
+        <div className="slider-dots">
+          {slides.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${index === currentSlide ? 'active' : ''}`}
+              onClick={() => setCurrentSlide(index)}
+            ></span>
+          ))}
         </div>
       </section>
 
