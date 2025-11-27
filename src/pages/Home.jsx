@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import s1 from '../assets/s12.jpg';
 import s2 from '../assets/s2.jpeg';
 import s3 from '../assets/s3.jpeg';
+import s4 from '../assets/s4.jpeg';
 
 const Home = () => {
   const slides = [
@@ -28,7 +29,7 @@ const Home = () => {
       id: 4,
       title: "Jrks Industrial Consultant Services",
       subtitle: "Expert industrial consultancy to optimize your business operations.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: s4
     }
   ];
 
