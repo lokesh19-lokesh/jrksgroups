@@ -379,18 +379,7 @@ body.dark-mode .search-overlay input {
      Let's keep the boxes but maybe adjust size if needed.
      Actually, let's revert the "Remove boxes on mobile" block or adjust it.
   */
-  .site-header.home-transparent .navbar-links a,
-  .site-header.home-transparent .dropdown-toggle,
-  .site-header.home-transparent .navbar-icons a {
-    /* Revert to desktop styles (boxes) or keep transparent if user wants clean look.
-       Given "black text", boxes are safer.
-       Let's comment out the removal so it inherits desktop styles (boxes).
-    */
-    /* background-color: transparent; */
-    /* box-shadow: none; */
-    /* padding: 1rem; */
-    /* color: black; */
-  }
+
 
   .top-bar {
     display: none;
@@ -640,6 +629,18 @@ body.dark-mode .search-overlay input {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .home-business-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+.home-business-grid .business-card {
+  border: none;
 }
 
 .business-card {

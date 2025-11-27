@@ -11,6 +11,8 @@ import Career from './pages/Career';
 import Contact from './pages/Contact';
 import FraudAlert from './pages/FraudAlert';
 import NewsMedia from './pages/NewsMedia';
+import SuryaProjects from './pages/SuryaProjects';
+import SriVedanthaEducationalTrust from './pages/SriVedanthaEducationalTrust';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="fraud-alert" element={<FraudAlert />} />
           <Route path="news-media" element={<NewsMedia />} />
+          <Route path="surya-projects" element={<SuryaProjects />} />
+          <Route path="sri-vedantha-educational-trust" element={<SriVedanthaEducationalTrust />} />
         </Route>
       </Routes>
     </BrowserRouter>

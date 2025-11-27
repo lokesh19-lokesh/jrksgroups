@@ -23,10 +23,12 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Our Businesses</h3>
           <ul>
-            <li><Link to="/universal-power-systems">Universal Power Systems</Link></li>
+            <li><Link to="/universal-power-systems">Universal Solar Power Systems</Link></li>
             <li><Link to="/jrks-traders">Jrks Traders</Link></li>
             <li><Link to="/nrs-first-capital">NRS First Capital</Link></li>
             <li><Link to="/jrks-industrial-consultant-services">Jrks Industrial Consultant Services</Link></li>
+            <li><Link to="/surya-projects">Surya Projects</Link></li>
+            <li><Link to="/sri-vedantha-educational-trust">Sri Vedantha Educational Trust</Link></li>
           </ul>
         </div>
 
