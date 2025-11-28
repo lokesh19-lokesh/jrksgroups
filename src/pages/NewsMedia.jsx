@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import nm1 from '../assets/nm1.avif';
 
 const NewsMedia = () => {
   useEffect(() => {
@@ -11,7 +12,7 @@ const NewsMedia = () => {
     title: "Accelerating Growth: Jrks Group's Strategic Vision for 2030",
     date: "NOVEMBER 10, 2025",
     category: "STRATEGY",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    image: nm1,
     excerpt: "We are redefining our operational frameworks to embrace sustainability and digital transformation across all verticals."
   };
 
