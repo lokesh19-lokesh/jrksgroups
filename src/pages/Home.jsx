@@ -6,6 +6,7 @@ import s3 from '../assets/s3.jpeg';
 import s4 from '../assets/s4.jpeg';
 import businessBg from '../assets/SteelAuthorityofIndiadealers.jpg';
 import solar from '../assets/solar.jpeg';
+import aboutimage from '../assets/about.jpeg';
 
 const Home = () => {
   const slides = [
@@ -135,11 +136,12 @@ const Home = () => {
           </div>
           <div style={{ flex: '1 1 400px' }}>
             <img
-              src={businessBg}
+              src={aboutimage}
               alt="Jrks Group Overview"
               style={{
                 width: '100%',
                 height: 'auto',
+                objectFit: 'scale-down',
                 borderRadius: '12px',
                 boxShadow: '0 10px 30px rgba(0, 0, 0, 0.15)'
               }}

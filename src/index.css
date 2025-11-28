@@ -612,6 +612,8 @@ body.dark-mode .search-overlay input {
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: transform 0.2s, background-color 0.2s;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .cta-button:hover {
@@ -653,9 +655,10 @@ body.dark-mode .search-overlay input {
 
 @media (min-width: 768px) {
   .home-business-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 900px;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
     margin: 0 auto;
+    gap: 1.5rem;
   }
 }
 
@@ -678,19 +681,24 @@ body.dark-mode .search-overlay input {
 }
 
 .card-image {
-  height: 200px;
+  height: 150px;
   background-color: #ddd;
   background-size: cover;
   background-position: center;
 }
 
 .card-content {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .card-content h3 {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-content p {
   margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 .card-link {
@@ -698,7 +706,8 @@ body.dark-mode .search-overlay input {
   font-weight: 600;
   display: inline-flex;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  text-decoration: none;
 }
 
 .card-link::after {
@@ -709,49 +718,6 @@ body.dark-mode .search-overlay input {
 
 .card-link:hover::after {
   margin-left: 10px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .navbar {
-    height: auto;
-    padding: 1rem;
-    flex-direction: column;
-  }
-
-  .navbar-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-}
-
-/* Career Page Styles */
-.career-hero {
-  background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2084&q=80');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.career-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: white;
-}
-
-.career-hero p {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 .search-container {
