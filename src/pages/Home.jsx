@@ -40,9 +40,9 @@ const Home = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 8000);
+    }, 3000);
     return () => clearInterval(timer);
-  }, [currentSlide]); // Restart timer on slide change
+  }, [currentSlide]);
 
   const businesses = [
     {
@@ -50,7 +50,7 @@ const Home = () => {
       description: "Leading solutions in power management and industrial energy systems.",
       link: "/universal-power-systems",
       image: solar,
-      bgColor: "#003366", // Deep Blue
+      bgColor: "#003366",
       textColor: "#ffffff"
     },
     {
@@ -58,15 +58,15 @@ const Home = () => {
       description: "Your trusted partner for steel trading and industrial raw materials.",
       link: "/jrks-traders",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      bgColor: "#D4AF37", // Gold
-      textColor: "#003366" // Dark Blue text for contrast
+      bgColor: "#D4AF37",
+      textColor: "#003366"
     },
     {
       title: "NRS First Capital",
       description: "Financial services and capital management for sustainable growth.",
       link: "/nrs-first-capital",
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      bgColor: "#0056b3", // Lighter Blue
+      bgColor: "#0056b3",
       textColor: "#ffffff"
     },
     {
@@ -74,7 +74,7 @@ const Home = () => {
       description: "Expert industrial consultancy to optimize your business operations.",
       link: "/jrks-industrial-consultant-services",
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      bgColor: "#333333", // Dark Grey
+      bgColor: "#333333",
       textColor: "#ffffff"
     },
     {
@@ -82,7 +82,7 @@ const Home = () => {
       description: "Specializing in Civil, Electrical, Railway, and Government infrastructure projects.",
       link: "/surya-projects",
       image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      bgColor: "#8B0000", // Dark Red
+      bgColor: "#8B0000",
       textColor: "#ffffff"
     },
     {
@@ -90,7 +90,7 @@ const Home = () => {
       description: "Empowering the future through education.",
       link: "/sri-vedantha-educational-trust",
       image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      bgColor: "#4B0082", // Indigo
+      bgColor: "#4B0082",
       textColor: "#ffffff"
     }
   ];
@@ -119,18 +119,39 @@ const Home = () => {
           <h2>Corporate Overview</h2>
           <div className="divider"></div>
         </div>
-        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ fontSize: '1.2rem', color: '#555', lineHeight: '1.8' }}>
-            <strong>Jrks Group</strong> is a diversified conglomerate with a commanding presence in <strong>Steel Trading, Power Systems, Financial Services, Industrial Consultancy, Infrastructure, and Education</strong>.
-            Driven by a vision of excellence and a commitment to nation-building, we empower industries and enrich lives through our multifaceted ventures.
-          </p>
+        <div style={{
+          display: 'flex',
+          gap: '3rem',
+          alignItems: 'center',
+          maxWidth: '1200px',
+          margin: '0 auto',
+          flexWrap: 'wrap'
+        }}>
+          <div style={{ flex: '1 1 400px' }}>
+            <p style={{ fontSize: '1.2rem', color: '#555', lineHeight: '1.8', textAlign: 'left' }}>
+              <strong>Jrks Group</strong> is a diversified conglomerate with a commanding presence in <strong>Steel Trading, Power Systems, Financial Services, Industrial Consultancy, Infrastructure, and Education</strong>.
+              Driven by a vision of excellence and a commitment to nation-building, we empower industries and enrich lives through our multifaceted ventures.
+            </p>
+          </div>
+          <div style={{ flex: '1 1 400px' }}>
+            <img
+              src={businessBg}
+              alt="Jrks Group Overview"
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: '12px',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.15)'
+              }}
+            />
+          </div>
         </div>
       </section>
 
       <section className="section-container" style={{
         position: 'relative',
         backgroundImage: `url(${businessBg})`,
-        backgroundColor: '#003366', // Fallback color
+        backgroundColor: '#003366',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         padding: '5rem 2rem',
@@ -142,7 +163,7 @@ const Home = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.8)', // Darker overlay for better text contrast
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
           zIndex: 1
         }}></div>
 
