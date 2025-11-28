@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import s1 from '../assets/s12.jpg';
 import s2 from '../assets/s2.png';
 import s3 from '../assets/s3.jpeg';
@@ -46,7 +47,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 3000);
+    }, 2000);
     return () => clearInterval(timer);
   }, [currentSlide]);
 
@@ -101,8 +102,33 @@ const Home = () => {
     }
   ];
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Jrks Group",
+    "url": "https://www.jrksgroup.com",
+    "logo": "https://www.jrksgroup.com/assets/logo.png",
+    "description": "Jrks Group is a diversified conglomerate with a commanding presence in Steel Trading, Power Systems, Financial Services, Industrial Consultancy, Infrastructure, and Education.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-1234567890",
+      "contactType": "customer service"
+    }
+  };
+
   return (
     <div>
+      <SEO
+        title="Home"
+        description="Jrks Group - Leading solutions in Steel Trading, Power Systems, Financial Services, and more."
+        schema={schema}
+      />
       <section className="hero-section" style={{ backgroundImage: `url(${slides[currentSlide].image})` }}>
         <div className="hero-content">
           <h1>{slides[currentSlide].title}</h1>
