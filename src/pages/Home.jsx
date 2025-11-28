@@ -9,6 +9,9 @@ import solar from '../assets/solar.jpeg';
 import aboutimage from '../assets/about.jpeg';
 import JRKSTraders from '../assets/JRKSTraders.png';
 import NRSFirstCapital from '../assets/nrs.png';
+import suryaProjects from '../assets/surya.png';
+import education from '../assets/education.png';
+import ConsultantServices from '../assets/ConsultantServices.png';
 
 const Home = () => {
   const slides = [
@@ -76,7 +79,7 @@ const Home = () => {
       title: "Consultant Services",
       description: "Expert industrial consultancy to optimize your business operations.",
       link: "/jrks-industrial-consultant-services",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: ConsultantServices,
       bgColor: "#333333",
       textColor: "#ffffff"
     },
@@ -84,7 +87,7 @@ const Home = () => {
       title: "Surya Projects",
       description: "Specializing in Civil, Electrical, Railway, and Government infrastructure projects.",
       link: "/surya-projects",
-      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: suryaProjects,
       bgColor: "#8B0000",
       textColor: "#ffffff"
     },
@@ -92,7 +95,7 @@ const Home = () => {
       title: "Sri Vedantha Educational Trust",
       description: "Empowering the future through education.",
       link: "/sri-vedantha-educational-trust",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: education,
       bgColor: "#4B0082",
       textColor: "#ffffff"
     }
