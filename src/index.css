@@ -1319,6 +1319,186 @@ body.dark-mode .search-overlay input {
 }
 
 /* Ensure dropdowns are still readable */
+.site-header.home-mode .dropdown-menu {}
+
+/* Scrolled State (Solid) */
+.site-header.home-mode.scrolled {
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+  height: 46px;
+  /* Match input height roughly */
+}
+
+.search-btn:hover {
+  background-color: #e5c150;
+}
+
+.job-listings {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.job-card {
+  background-color: white;
+  border: 1px solid #eee;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.job-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-color: var(--primary-color);
+}
+
+.job-info h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.job-meta {
+  display: flex;
+  gap: 1.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.apply-btn {
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.apply-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Slider Dots */
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #D4AF37;
+  /* Gold Accent */
+  transform: scale(1.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fade-in-up {
+  animation-name: fadeInUp;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+/* Transparent Navbar Styles (Home Page Only - Desktop) */
+.site-header.home-mode {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom: none;
+}
+
+.site-header.home-mode .top-bar,
+.site-header.home-mode .navbar {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+/* Ensure text is white on transparent background */
+.site-header.home-mode .top-links a,
+.site-header.home-mode .dealer-text,
+.site-header.home-mode .navbar-links a,
+.site-header.home-mode .navbar-icons a,
+.site-header.home-mode .dropdown-toggle {
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.site-header.home-mode .dealer-info {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.site-header.home-mode .navbar-links>li>a::after,
+.site-header.home-mode .dropdown-toggle::after {
+  background-color: #fff;
+}
+
+/* Scrolled State (Solid) */
+.site-header.home-mode.scrolled {
+  position: fixed;
+  background-color: #FFF8E7;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.site-header.home-mode.scrolled .top-bar,
+.site-header.home-mode.scrolled .navbar {
+  background-color: #FFF8E7;
+}
+
+.site-header.home-mode.scrolled .top-links a,
+.site-header.home-mode.scrolled .dealer-text,
+.site-header.home-mode.scrolled .navbar-links a,
+.site-header.home-mode.scrolled .navbar-icons a,
+.site-header.home-mode.scrolled .dropdown-toggle {
+  color: #333;
+  text-shadow: none;
+}
+
+.site-header.home-mode.scrolled .navbar-links>li>a::after,
+.site-header.home-mode.scrolled .dropdown-toggle::after {
+  background-color: #d4af37;
+}
+
+/* Ensure dropdowns are still readable */
 .site-header.home-mode .dropdown-menu {
   background-color: white;
   border-top: 3px solid #d4af37;
@@ -1336,4 +1516,15 @@ body.dark-mode .search-overlay input {
   color: var(--primary-color);
   padding-left: 1.8rem;
   border-left: 4px solid var(--secondary-color);
+}
+
+/* Mobile Menu Text Color Fix for Home Page */
+@media (max-width: 1024px) {
+
+  .site-header.home-mode .navbar-menu .navbar-links a,
+  .site-header.home-mode .navbar-menu .dropdown-toggle,
+  .site-header.home-mode .navbar-menu .navbar-icons a {
+    color: #333;
+    text-shadow: none;
+  }
 }
