@@ -7,6 +7,8 @@ import s4 from '../assets/s4.jpeg';
 import businessBg from '../assets/SteelAuthorityofIndiadealers.jpg';
 import solar from '../assets/solar.jpeg';
 import aboutimage from '../assets/about.jpeg';
+import JRKSTraders from '../assets/JRKSTraders.png';
+import NRSFirstCapital from '../assets/nrs.png';
 
 const Home = () => {
   const slides = [
@@ -58,7 +60,7 @@ const Home = () => {
       title: "JRKS Traders",
       description: "Your trusted partner for steel trading and industrial raw materials.",
       link: "/jrks-traders",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: JRKSTraders,
       bgColor: "#D4AF37",
       textColor: "#003366"
     },
@@ -66,7 +68,7 @@ const Home = () => {
       title: "NRS First Capital",
       description: "Financial services and capital management for sustainable growth.",
       link: "/nrs-first-capital",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: NRSFirstCapital,
       bgColor: "#0056b3",
       textColor: "#ffffff"
     },
