@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import s1 from '../assets/s12.jpg';
-import s2 from '../assets/s2.jpeg';
+import s2 from '../assets/s2.png';
 import s3 from '../assets/s3.jpeg';
 import s4 from '../assets/s4.jpeg';
 import businessBg from '../assets/SteelAuthorityofIndiadealers.jpg';
