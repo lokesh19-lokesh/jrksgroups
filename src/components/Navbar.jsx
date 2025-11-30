@@ -76,7 +76,9 @@ const Navbar = () => {
                 <li><Link to="/nrs-first-capital" onClick={toggleMenu}>NRS TRUST Capital</Link></li>
                 <li><Link to="/jrks-industrial-consultant-services" onClick={toggleMenu}>Jrks Industrial Consultant Services</Link></li>
                 <li><Link to="/surya-projects" onClick={toggleMenu}>Surya Projects</Link></li>
+
                 <li><Link to="/sri-vedantha-educational-trust" onClick={toggleMenu}>Sri Vedantha Educational Trust</Link></li>
+                <li><Link to="/universal-cancer-screening" onClick={toggleMenu}>Universal Cancer Screening</Link></li>
               </ul>
             </li>
 
