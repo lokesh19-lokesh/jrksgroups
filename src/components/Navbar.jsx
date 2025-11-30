@@ -73,7 +73,7 @@ const Navbar = () => {
               <ul className="dropdown-menu">
                 <li><Link to="/universal-power-systems" onClick={toggleMenu}>Universal Solar Power Systems</Link></li>
                 <li><Link to="/jrks-traders" onClick={toggleMenu}>Jrks Traders</Link></li>
-                <li><Link to="/nrs-first-capital" onClick={toggleMenu}>NRS First Capital</Link></li>
+                <li><Link to="/nrs-first-capital" onClick={toggleMenu}>NRS TRUST Capital</Link></li>
                 <li><Link to="/jrks-industrial-consultant-services" onClick={toggleMenu}>Jrks Industrial Consultant Services</Link></li>
                 <li><Link to="/surya-projects" onClick={toggleMenu}>Surya Projects</Link></li>
                 <li><Link to="/sri-vedantha-educational-trust" onClick={toggleMenu}>Sri Vedantha Educational Trust</Link></li>

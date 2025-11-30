@@ -18,7 +18,7 @@ const Home = () => {
   const slides = [
     {
       id: 1,
-      title: "Universal Power Systems",
+      title: "Universal Solar Power Systems",
       subtitle: "Leading solutions in power management and industrial energy systems.",
       image: s1
     },
@@ -30,7 +30,7 @@ const Home = () => {
     },
     {
       id: 3,
-      title: "NRS First Capital",
+      title: "NRS TRUST Capital",
       subtitle: "Financial services and capital management for sustainable growth.",
       image: s3
     },
@@ -69,7 +69,7 @@ const Home = () => {
       textColor: "#003366"
     },
     {
-      title: "NRS First Capital",
+      title: "NRS TRUST Capital",
       description: "Financial services and capital management for sustainable growth.",
       link: "/nrs-first-capital",
       image: NRSFirstCapital,
