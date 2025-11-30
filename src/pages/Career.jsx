@@ -7,6 +7,16 @@ const Career = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCompany, setSelectedCompany] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
@@ -241,7 +251,7 @@ const Career = () => {
           zIndex: 1
         }}></div>
         <div className="hero-content" style={{ position: 'relative', zIndex: 2, maxWidth: '800px', padding: '0 2rem' }}>
-          <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', fontWeight: '700', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>Build Your Career With Us</h1>
+          <h1 style={{ fontSize: isMobile ? '2rem' : '3.5rem', marginBottom: '1rem', fontWeight: '700', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>Build Your Career With Us</h1>
           <p style={{ fontSize: '1.5rem', fontWeight: '300' }}>Join a team that is shaping the future of industry and innovation.</p>
         </div>
       </section>

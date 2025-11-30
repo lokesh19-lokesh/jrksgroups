@@ -81,7 +81,7 @@ const UniversalPowerSystems = () => {
           zIndex: 1
         }}></div>
         <div className="hero-content" style={{ maxWidth: '900px', position: 'relative', zIndex: 2 }}>
-          <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', fontWeight: '700', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>Universal Solar Power Systems</h1>
+          <h1 style={{ fontSize: isMobile ? '2rem' : '3.5rem', marginBottom: '1rem', fontWeight: '700', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>Universal Solar Power Systems</h1>
           <p style={{ fontSize: '1.5rem', opacity: '1', textShadow: '1px 1px 2px rgba(0,0,0,0.5)', maxWidth: '800px', margin: '0 auto' }}>
             Empowering Industries with Reliable Energy Solutions.
           </p>
