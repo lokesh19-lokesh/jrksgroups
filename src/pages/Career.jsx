@@ -10,42 +10,169 @@ const Career = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCompany, setSelectedCompany] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
+  const [selectedJob, setSelectedJob] = useState(null);
 
   const allJobs = [
     // Universal Solar Power Systems
-    { title: "Solar Installation Technician", company: "Universal Solar Power Systems", location: "Hyderabad", type: "Full Time" },
-    { title: "Sales Executive - Renewable Energy", company: "Universal Solar Power Systems", location: "Bangalore", type: "Full Time" },
-    { title: "Solar Engineering Intern", company: "Universal Solar Power Systems", location: "Hyderabad", type: "Internship" },
+    {
+      title: "Solar Installation Technician",
+      company: "Universal Solar Power Systems",
+      location: "Hyderabad",
+      type: "Full Time",
+      description: "Responsible for installing and maintaining solar PV systems. Must have experience with electrical wiring and roofing. Join us to power the future with renewable energy."
+    },
+    {
+      title: "Sales Executive - Renewable Energy",
+      company: "Universal Solar Power Systems",
+      location: "Bangalore",
+      type: "Full Time",
+      description: "Drive sales for our solar solutions. We are looking for energetic individuals with a passion for green energy and a track record in B2C or B2B sales."
+    },
+    {
+      title: "Solar Engineering Intern",
+      company: "Universal Solar Power Systems",
+      location: "Hyderabad",
+      type: "Internship",
+      description: "Learn the ropes of solar system design and engineering. Work closely with our senior engineers on real-world projects."
+    },
 
     // Jrks Traders
-    { title: "Supply Chain Manager", company: "Jrks Traders", location: "Mumbai", type: "Full Time" },
-    { title: "Procurement Specialist", company: "Jrks Traders", location: "Delhi", type: "Full Time" },
-    { title: "Logistics Intern", company: "Jrks Traders", location: "Mumbai", type: "Internship" },
+    {
+      title: "Supply Chain Manager",
+      company: "Jrks Traders",
+      location: "Mumbai",
+      type: "Full Time",
+      description: "Oversee our steel trading supply chain. Optimize logistics, manage vendor relationships, and ensure timely delivery of industrial materials."
+    },
+    {
+      title: "Procurement Specialist",
+      company: "Jrks Traders",
+      location: "Delhi",
+      type: "Full Time",
+      description: "Handle procurement of raw materials. Negotiate with suppliers to get the best deals for our trading operations."
+    },
+    {
+      title: "Logistics Intern",
+      company: "Jrks Traders",
+      location: "Mumbai",
+      type: "Internship",
+      description: "Gain hands-on experience in logistics management. Assist in tracking shipments and coordinating with transport partners."
+    },
 
     // NRS Trust Capital
-    { title: "Financial Analyst", company: "NRS Trust Capital", location: "Hyderabad", type: "Full Time" },
-    { title: "Loan Officer", company: "NRS Trust Capital", location: "Chennai", type: "Full Time" },
-    { title: "Finance Intern", company: "NRS Trust Capital", location: "Hyderabad", type: "Internship" },
+    {
+      title: "Financial Analyst",
+      company: "NRS Trust Capital",
+      location: "Hyderabad",
+      type: "Full Time",
+      description: "Analyze financial data to help our clients make informed investment decisions. Strong modeling and analytical skills required."
+    },
+    {
+      title: "Loan Officer",
+      company: "NRS Trust Capital",
+      location: "Chennai",
+      type: "Full Time",
+      description: "Evaluate loan applications and assess creditworthiness. Help individuals and businesses secure the funding they need."
+    },
+    {
+      title: "Finance Intern",
+      company: "NRS Trust Capital",
+      location: "Hyderabad",
+      type: "Internship",
+      description: "Support our finance team with data entry, report generation, and market research. Great opportunity for finance students."
+    },
 
     // Industrial Consultant Services
-    { title: "Industrial Safety Consultant", company: "Industrial Consultant Services", location: "Pune", type: "Contract" },
-    { title: "Process Improvement Engineer", company: "Industrial Consultant Services", location: "Hyderabad", type: "Full Time" },
-    { title: "Industrial Management Intern", company: "Industrial Consultant Services", location: "Pune", type: "Internship" },
+    {
+      title: "Industrial Safety Consultant",
+      company: "Industrial Consultant Services",
+      location: "Pune",
+      type: "Contract",
+      description: "Advise factories on safety standards and regulations. Conduct audits and implement safety protocols to prevent accidents."
+    },
+    {
+      title: "Process Improvement Engineer",
+      company: "Industrial Consultant Services",
+      location: "Hyderabad",
+      type: "Full Time",
+      description: "Analyze industrial processes to identify bottlenecks and inefficiencies. Implement lean methodologies to improve productivity."
+    },
+    {
+      title: "Industrial Management Intern",
+      company: "Industrial Consultant Services",
+      location: "Pune",
+      type: "Internship",
+      description: "Assist consultants in data collection and analysis. Learn about industrial operations and management consulting."
+    },
 
     // Surya Projects
-    { title: "Civil Engineer", company: "Surya Projects", location: "Visakhapatnam", type: "Full Time" },
-    { title: "Project Manager", company: "Surya Projects", location: "Hyderabad", type: "Full Time" },
-    { title: "Civil Engineering Intern", company: "Surya Projects", location: "Visakhapatnam", type: "Internship" },
+    {
+      title: "Civil Engineer",
+      company: "Surya Projects",
+      location: "Visakhapatnam",
+      type: "Full Time",
+      description: "Supervise construction projects from start to finish. Ensure quality control and adherence to safety standards on site."
+    },
+    {
+      title: "Project Manager",
+      company: "Surya Projects",
+      location: "Hyderabad",
+      type: "Full Time",
+      description: "Manage infrastructure projects, coordinate teams, and ensure timely completion within budget. Experience in construction management is a must."
+    },
+    {
+      title: "Civil Engineering Intern",
+      company: "Surya Projects",
+      location: "Visakhapatnam",
+      type: "Internship",
+      description: "Work on site with our civil engineers. Gain practical experience in construction supervision and project planning."
+    },
 
     // Sri Vedantha Educational Trust
-    { title: "Program Coordinator", company: "Sri Vedantha Educational Trust", location: "Hyderabad", type: "Full Time" },
-    { title: "Vocational Trainer", company: "Sri Vedantha Educational Trust", location: "Rural Districts", type: "Part Time" },
-    { title: "Social Work Intern", company: "Sri Vedantha Educational Trust", location: "Hyderabad", type: "Internship" },
+    {
+      title: "Program Coordinator",
+      company: "Sri Vedantha Educational Trust",
+      location: "Hyderabad",
+      type: "Full Time",
+      description: "Coordinate our educational programs and community outreach initiatives. Passion for education and social impact is essential."
+    },
+    {
+      title: "Vocational Trainer",
+      company: "Sri Vedantha Educational Trust",
+      location: "Rural Districts",
+      type: "Part Time",
+      description: "Train youth in vocational skills to improve their employability. Experience in skill development training is preferred."
+    },
+    {
+      title: "Social Work Intern",
+      company: "Sri Vedantha Educational Trust",
+      location: "Hyderabad",
+      type: "Internship",
+      description: "Assist in organizing community events and educational workshops. Ideal for social work or education students."
+    },
 
     // Universal Cancer Screening
-    { title: "Community Health Worker", company: "Universal Cancer Screening", location: "Pan India", type: "Full Time" },
-    { title: "Medical Technician", company: "Universal Cancer Screening", location: "Hyderabad", type: "Full Time" },
-    { title: "Public Health Intern", company: "Universal Cancer Screening", location: "Hyderabad", type: "Internship" }
+    {
+      title: "Community Health Worker",
+      company: "Universal Cancer Screening",
+      location: "Pan India",
+      type: "Full Time",
+      description: "Raise awareness about cancer screening in communities. Organize camps and facilitate early detection programs."
+    },
+    {
+      title: "Medical Technician",
+      company: "Universal Cancer Screening",
+      location: "Hyderabad",
+      type: "Full Time",
+      description: "Operate screening equipment and assist doctors during camps. Certification in medical lab technology is required."
+    },
+    {
+      title: "Public Health Intern",
+      company: "Universal Cancer Screening",
+      location: "Hyderabad",
+      type: "Internship",
+      description: "Support our public health initiatives. Assist in data management and program evaluation."
+    }
   ];
 
   const filteredJobs = allJobs.filter(job => {
@@ -68,8 +195,16 @@ const Career = () => {
 
   const locations = ["Hyderabad", "Bangalore", "Mumbai", "Delhi", "Chennai", "Pune", "Visakhapatnam", "Pan India"];
 
+  const handleApplyClick = (job) => {
+    setSelectedJob(job);
+  };
+
+  const closeModal = () => {
+    setSelectedJob(null);
+  };
+
   return (
-    <div className="career-page" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: '#333', backgroundColor: '#f9f9f9' }}>
+    <div className="career-page" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: '#333', backgroundColor: '#f9f9f9', position: 'relative' }}>
       <SEO
         title="Careers"
         description="Explore job openings and internships across JRKS Group of Companies. Join us in shaping the future."
@@ -215,16 +350,18 @@ const Career = () => {
                     <span>🕒 {job.type}</span>
                   </div>
                 </div>
-                <button style={{
-                  padding: '0.6rem 1.5rem',
-                  border: '1px solid #003366',
-                  backgroundColor: 'transparent',
-                  color: '#003366',
-                  borderRadius: '4px',
-                  fontWeight: '600',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s'
-                }}
+                <button
+                  onClick={() => handleApplyClick(job)}
+                  style={{
+                    padding: '0.6rem 1.5rem',
+                    border: '1px solid #003366',
+                    backgroundColor: 'transparent',
+                    color: '#003366',
+                    borderRadius: '4px',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s'
+                  }}
                   onMouseOver={(e) => {
                     e.target.style.backgroundColor = '#003366';
                     e.target.style.color = 'white';
@@ -264,6 +401,104 @@ const Career = () => {
           }}>Contact HR Team</Link>
         </div>
       </section>
+
+      {/* Job Application Modal */}
+      {selectedJob && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0,0,0,0.6)',
+          zIndex: 1000,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '1rem'
+        }} onClick={closeModal}>
+          <div style={{
+            backgroundColor: 'white',
+            borderRadius: '12px',
+            maxWidth: '600px',
+            width: '100%',
+            maxHeight: '90vh',
+            overflowY: 'auto',
+            position: 'relative',
+            boxShadow: '0 10px 40px rgba(0,0,0,0.2)',
+            animation: 'fadeIn 0.3s ease-out'
+          }} onClick={(e) => e.stopPropagation()}>
+
+            <div style={{ padding: '2rem', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
+              <div>
+                <h3 style={{ fontSize: '1.8rem', color: '#003366', margin: '0 0 0.5rem 0' }}>{selectedJob.title}</h3>
+                <p style={{ margin: 0, color: '#666', fontWeight: '500' }}>{selectedJob.company}</p>
+              </div>
+              <button onClick={closeModal} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: '#999' }}>&times;</button>
+            </div>
+
+            <div style={{ padding: '2rem' }}>
+              <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#555' }}>
+                <span style={{ backgroundColor: '#f0f4f8', padding: '0.3rem 0.8rem', borderRadius: '20px' }}>📍 {selectedJob.location}</span>
+                <span style={{ backgroundColor: '#f0f4f8', padding: '0.3rem 0.8rem', borderRadius: '20px' }}>🕒 {selectedJob.type}</span>
+              </div>
+
+              <h4 style={{ fontSize: '1.1rem', color: '#333', marginBottom: '0.5rem' }}>Job Description</h4>
+              <p style={{ lineHeight: '1.6', color: '#555', marginBottom: '2rem' }}>
+                {selectedJob.description}
+              </p>
+
+              <div style={{
+                backgroundColor: '#fff8e1',
+                border: '1px solid #ffe082',
+                padding: '1rem',
+                borderRadius: '8px',
+                marginBottom: '2rem',
+                display: 'flex',
+                alignItems: 'start',
+                gap: '0.8rem'
+              }}>
+                <span style={{ fontSize: '1.2rem' }}>⚠️</span>
+                <div>
+                  <strong style={{ display: 'block', color: '#b00020', marginBottom: '0.2rem' }}>Important Note:</strong>
+                  <span style={{ color: '#333', fontSize: '0.95rem' }}>
+                    To apply for this position, a non-refundable application fee of <strong>₹100</strong> is required.
+                  </span>
+                </div>
+              </div>
+
+              <button style={{
+                width: '100%',
+                padding: '1rem',
+                backgroundColor: '#003366',
+                color: 'white',
+                border: 'none',
+                borderRadius: '6px',
+                fontSize: '1.1rem',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                transition: 'background-color 0.2s'
+              }}
+                onMouseOver={(e) => e.target.style.backgroundColor = '#002244'}
+                onMouseOut={(e) => e.target.style.backgroundColor = '#003366'}
+                onClick={() => alert("Redirecting to payment gateway...")}
+              >
+                Pay ₹100 & Apply Now
+              </button>
+            </div>
+
+          </div>
+        </div>
+      )}
+
+      <style>
+        {`
+          @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+        `}
+      </style>
 
     </div>
   );
