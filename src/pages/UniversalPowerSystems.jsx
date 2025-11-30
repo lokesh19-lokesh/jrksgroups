@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import founderImage from '../assets/universalsolarpowersystems/founder.png';
 
 const UniversalPowerSystems = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -127,6 +128,13 @@ const UniversalPowerSystems = () => {
               </button>
             </li>
             <li style={{ marginBottom: '1rem' }}>
+              <button onClick={() => scrollToSection('founder-profile')} style={{
+                background: 'none', border: 'none', cursor: 'pointer', color: '#555', fontSize: '1rem', textAlign: 'left', padding: 0, fontWeight: '500', transition: 'color 0.2s'
+              }} onMouseOver={(e) => e.target.style.color = accentColor} onMouseOut={(e) => e.target.style.color = '#555'}>
+                Founder Profile
+              </button>
+            </li>
+            <li style={{ marginBottom: '1rem' }}>
               <button onClick={() => scrollToSection('why-choose-us')} style={{
                 background: 'none', border: 'none', cursor: 'pointer', color: '#555', fontSize: '1rem', textAlign: 'left', padding: 0, fontWeight: '500', transition: 'color 0.2s'
               }} onMouseOver={(e) => e.target.style.color = accentColor} onMouseOut={(e) => e.target.style.color = '#555'}>
@@ -188,6 +196,53 @@ const UniversalPowerSystems = () => {
                   <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>{service.desc}</p>
                 </div>
               ))}
+            </div>
+          </section>
+
+          {/* Founder Profile Section */}
+          <section id="founder-profile" style={{ marginBottom: '5rem' }}>
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', color: '#333', fontWeight: '300' }}>Our Founder</h2>
+            <div style={{ width: '60px', height: '3px', backgroundColor: accentColor, marginBottom: '2rem' }}></div>
+
+            <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: '2rem', alignItems: 'flex-start' }}>
+              <div style={{ flex: '0 0 300px', width: '100%' }}>
+                <img src={founderImage} alt="Dr. S. Vathsal" style={{ width: '100%', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+                <div style={{ marginTop: '1rem', textAlign: 'center' }}>
+                  <h3 style={{ color: accentColor, fontSize: '1.4rem', marginBottom: '0.5rem' }}>Dr. S. Vathsal</h3>
+                  <p style={{ color: '#666', fontSize: '0.95rem' }}>Consultant/Advisor, Skyroot Aerospace</p>
+                </div>
+              </div>
+
+              <div style={{ flex: '1' }}>
+                <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#555', marginBottom: '1.5rem' }}>
+                  A distinguished scientist and academician, Dr. S. Vathsal brings decades of expertise in aerospace, control systems, and engineering education. His illustrious career spans prestigious organizations like ISRO, DRDO, NASA, and various academic institutions.
+                </p>
+
+                <h4 style={{ color: accentColor, fontSize: '1.2rem', marginBottom: '0.5rem', marginTop: '1.5rem' }}>Education</h4>
+                <ul style={{ listStyle: 'none', padding: 0, color: '#555', lineHeight: '1.6' }}>
+                  <li style={{ marginBottom: '0.5rem' }}>• <strong>Ph.D.</strong> (1974), IISc Bangalore - "Minimax Approach to linear filtering Problems with uncertainties"</li>
+                  <li style={{ marginBottom: '0.5rem' }}>• <strong>M.E.</strong> (1970), Electrical and Electronics Engineering, BITS Pilani</li>
+                  <li>• <strong>B.E. (Hons)</strong> (1968), Electrical and Electronics, Thiagarajar College of Engineering, Madurai</li>
+                </ul>
+
+                <h4 style={{ color: accentColor, fontSize: '1.2rem', marginBottom: '0.5rem', marginTop: '1.5rem' }}>Professional Excellence</h4>
+                <ul style={{ listStyle: 'none', padding: 0, color: '#555', lineHeight: '1.6' }}>
+                  <li style={{ marginBottom: '0.5rem' }}>• <strong>ISRO (VSSC):</strong> Worked with Dr. APJ Abdul Kalam in Project SLV for 4 years in mission analysis group.</li>
+                  <li style={{ marginBottom: '0.5rem' }}>• <strong>International Research:</strong> Post-doctoral research at DFVLR (Germany) and NASA Goddard Space Flight Center (USA) on estimation theory and spacecraft attitude determination.</li>
+                  <li style={{ marginBottom: '0.5rem' }}>• <strong>DRDO (DRDL):</strong> Scientist E, F & G. Involved in Missile system design, Head of NDE division. Retired as Director Extra Mural Research & IPR from DRDO HQ (2007).</li>
+                  <li>• <strong>Academic Leadership:</strong> Served as Professor, Principal, Dean, and Director in institutions like PSG College, Osmania University, VIT, Bhaskar Engineering College, and JBIET.</li>
+                </ul>
+
+                <h4 style={{ color: accentColor, fontSize: '1.2rem', marginBottom: '0.5rem', marginTop: '1.5rem' }}>Awards & Recognition</h4>
+                <ul style={{ listStyle: 'none', padding: 0, color: '#555', lineHeight: '1.6' }}>
+                  <li style={{ marginBottom: '0.5rem' }}>• Global Achievers Award (Dubai, 2016)</li>
+                  <li style={{ marginBottom: '0.5rem' }}>• Jewel of India Award</li>
+                  <li style={{ marginBottom: '0.5rem' }}>• Eminent Educationalist Award</li>
+                  <li style={{ marginBottom: '0.5rem' }}>• Rajiv Gandhi Education Excellence Award</li>
+                  <li style={{ marginBottom: '0.5rem' }}>• Indira Gandhi Vidya Gold Award</li>
+                  <li>• Published 90+ technical papers; Chief Editor of IJIA (Korea) and JBIET Research Review.</li>
+                </ul>
+              </div>
             </div>
           </section>
 
