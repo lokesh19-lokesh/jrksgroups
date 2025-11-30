@@ -19,21 +19,21 @@ const Career = () => {
       company: "Universal Solar Power Systems",
       location: "Hyderabad",
       type: "Full Time",
-      description: "Responsible for installing and maintaining solar PV systems. Must have experience with electrical wiring and roofing. Join us to power the future with renewable energy."
+      description: "Responsible for installing and maintaining solar PV systems. Must have experience with electrical wiring and roofing. Join us to power the future with renewable energy. Education Qualification: MBA, MTECH, BTECH, MCOM, BCOM."
     },
     {
       title: "Sales Executive - Renewable Energy",
       company: "Universal Solar Power Systems",
       location: "Bangalore",
       type: "Full Time",
-      description: "Drive sales for our solar solutions. We are looking for energetic individuals with a passion for green energy and a track record in B2C or B2B sales."
+      description: "Drive sales for our solar solutions. We are looking for energetic individuals with a passion for green energy and a track record in B2C or B2B sales. Education Qualification: MBA, MTECH, BTECH, MCOM, BCOM."
     },
     {
       title: "Solar Engineering Intern",
       company: "Universal Solar Power Systems",
       location: "Hyderabad",
       type: "Internship",
-      description: "Learn the ropes of solar system design and engineering. Work closely with our senior engineers on real-world projects."
+      description: "Learn the ropes of solar system design and engineering. Work closely with our senior engineers on real-world projects. Internship for MBA & ENGINEERING & POLYTECHNIC & GRADUATION required."
     },
 
     // Jrks Traders
@@ -42,21 +42,21 @@ const Career = () => {
       company: "Jrks Traders",
       location: "Mumbai",
       type: "Full Time",
-      description: "Oversee our steel trading supply chain. Optimize logistics, manage vendor relationships, and ensure timely delivery of industrial materials."
+      description: "Oversee our steel trading supply chain. Optimize logistics, manage vendor relationships, and ensure timely delivery of industrial materials. Education Qualification: MBA, MTECH, BTECH, MCOM, BCOM."
     },
     {
       title: "Procurement Specialist",
       company: "Jrks Traders",
       location: "Delhi",
       type: "Full Time",
-      description: "Handle procurement of raw materials. Negotiate with suppliers to get the best deals for our trading operations."
+      description: "Handle procurement of raw materials. Negotiate with suppliers to get the best deals for our trading operations. Education Qualification: MBA, MTECH, BTECH, MCOM, BCOM."
     },
     {
       title: "Logistics Intern",
       company: "Jrks Traders",
       location: "Mumbai",
       type: "Internship",
-      description: "Gain hands-on experience in logistics management. Assist in tracking shipments and coordinating with transport partners."
+      description: "Gain hands-on experience in logistics management. Assist in tracking shipments and coordinating with transport partners. Internship for MBA & ENGINEERING & POLYTECHNIC & GRADUATION required."
     },
 
     // NRS Trust Capital
@@ -65,21 +65,21 @@ const Career = () => {
       company: "NRS Trust Capital",
       location: "Hyderabad",
       type: "Full Time",
-      description: "Analyze financial data to help our clients make informed investment decisions. Strong modeling and analytical skills required."
+      description: "Analyze financial data to help our clients make informed investment decisions. Strong modeling and analytical skills required. Education Qualification: MBA, MTECH, BTECH, MCOM, BCOM."
     },
     {
       title: "Loan Officer",
       company: "NRS Trust Capital",
       location: "Chennai",
       type: "Full Time",
-      description: "Evaluate loan applications and assess creditworthiness. Help individuals and businesses secure the funding they need."
+      description: "Evaluate loan applications and assess creditworthiness. Help individuals and businesses secure the funding they need. Education Qualification: MBA, MTECH, BTECH, MCOM, BCOM."
     },
     {
       title: "Finance Intern",
       company: "NRS Trust Capital",
       location: "Hyderabad",
       type: "Internship",
-      description: "Support our finance team with data entry, report generation, and market research. Great opportunity for finance students."
+      description: "Support our finance team with data entry, report generation, and market research. Great opportunity for finance students. Internship for MBA & ENGINEERING & POLYTECHNIC & GRADUATION required."
     },
 
     // Industrial Consultant Services
@@ -88,21 +88,21 @@ const Career = () => {
       company: "Industrial Consultant Services",
       location: "Pune",
       type: "Contract",
-      description: "Advise factories on safety standards and regulations. Conduct audits and implement safety protocols to prevent accidents."
+      description: "Advise factories on safety standards and regulations. Conduct audits and implement safety protocols to prevent accidents. Education Qualification: MBA, MTECH, BTECH, MCOM, BCOM."
     },
     {
       title: "Process Improvement Engineer",
       company: "Industrial Consultant Services",
       location: "Hyderabad",
       type: "Full Time",
-      description: "Analyze industrial processes to identify bottlenecks and inefficiencies. Implement lean methodologies to improve productivity."
+      description: "Analyze industrial processes to identify bottlenecks and inefficiencies. Implement lean methodologies to improve productivity. Education Qualification: MBA, MTECH, BTECH, MCOM, BCOM."
     },
     {
       title: "Industrial Management Intern",
       company: "Industrial Consultant Services",
       location: "Pune",
       type: "Internship",
-      description: "Assist consultants in data collection and analysis. Learn about industrial operations and management consulting."
+      description: "Assist consultants in data collection and analysis. Learn about industrial operations and management consulting. Internship for MBA & ENGINEERING & POLYTECHNIC & GRADUATION required."
     },
 
     // Surya Projects
@@ -111,21 +111,21 @@ const Career = () => {
       company: "Surya Projects",
       location: "Visakhapatnam",
       type: "Full Time",
-      description: "Supervise construction projects from start to finish. Ensure quality control and adherence to safety standards on site."
+      description: "Supervise construction projects from start to finish. Ensure quality control and adherence to safety standards on site. Education Qualification: MBA, MTECH, BTECH, MCOM, BCOM."
     },
     {
       title: "Project Manager",
       company: "Surya Projects",
       location: "Hyderabad",
       type: "Full Time",
-      description: "Manage infrastructure projects, coordinate teams, and ensure timely completion within budget. Experience in construction management is a must."
+      description: "Manage infrastructure projects, coordinate teams, and ensure timely completion within budget. Experience in construction management is a must. Education Qualification: MBA, MTECH, BTECH, MCOM, BCOM."
     },
     {
       title: "Civil Engineering Intern",
       company: "Surya Projects",
       location: "Visakhapatnam",
       type: "Internship",
-      description: "Work on site with our civil engineers. Gain practical experience in construction supervision and project planning."
+      description: "Work on site with our civil engineers. Gain practical experience in construction supervision and project planning. Internship for MBA & ENGINEERING & POLYTECHNIC & GRADUATION required."
     },
 
     // Sri Vedantha Educational Trust
@@ -134,21 +134,21 @@ const Career = () => {
       company: "Sri Vedantha Educational Trust",
       location: "Hyderabad",
       type: "Full Time",
-      description: "Coordinate our educational programs and community outreach initiatives. Passion for education and social impact is essential."
+      description: "Coordinate our educational programs and community outreach initiatives. Passion for education and social impact is essential. Education Qualification: MBA, MTECH, BTECH, MCOM, BCOM."
     },
     {
       title: "Vocational Trainer",
       company: "Sri Vedantha Educational Trust",
       location: "Rural Districts",
       type: "Part Time",
-      description: "Train youth in vocational skills to improve their employability. Experience in skill development training is preferred."
+      description: "Train youth in vocational skills to improve their employability. Experience in skill development training is preferred. Education Qualification: MBA, MTECH, BTECH, MCOM, BCOM."
     },
     {
       title: "Social Work Intern",
       company: "Sri Vedantha Educational Trust",
       location: "Hyderabad",
       type: "Internship",
-      description: "Assist in organizing community events and educational workshops. Ideal for social work or education students."
+      description: "Assist in organizing community events and educational workshops. Ideal for social work or education students. Internship for MBA & ENGINEERING & POLYTECHNIC & GRADUATION required."
     },
 
     // Universal Cancer Screening
@@ -157,21 +157,21 @@ const Career = () => {
       company: "Universal Cancer Screening",
       location: "Pan India",
       type: "Full Time",
-      description: "Raise awareness about cancer screening in communities. Organize camps and facilitate early detection programs."
+      description: "Raise awareness about cancer screening in communities. Organize camps and facilitate early detection programs. Education Qualification: MBA, MTECH, BTECH, MCOM, BCOM."
     },
     {
       title: "Medical Technician",
       company: "Universal Cancer Screening",
       location: "Hyderabad",
       type: "Full Time",
-      description: "Operate screening equipment and assist doctors during camps. Certification in medical lab technology is required."
+      description: "Operate screening equipment and assist doctors during camps. Certification in medical lab technology is required. Education Qualification: MBA, MTECH, BTECH, MCOM, BCOM."
     },
     {
       title: "Public Health Intern",
       company: "Universal Cancer Screening",
       location: "Hyderabad",
       type: "Internship",
-      description: "Support our public health initiatives. Assist in data management and program evaluation."
+      description: "Support our public health initiatives. Assist in data management and program evaluation. Internship for MBA & ENGINEERING & POLYTECHNIC & GRADUATION required."
     }
   ];
 
