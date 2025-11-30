@@ -28,7 +28,7 @@ const Footer = () => {
           <ul>
             <li><Link to="/universal-solar-power-systems">Universal Solar Power Systems</Link></li>
             <li><Link to="/jrks-traders">Jrks Traders</Link></li>
-            <li><Link to="/nrs-first-capital">NRS TRUST Capital</Link></li>
+            <li><Link to="/nrs-first-capital">NRS Trust Capital</Link></li>
             <li><Link to="/jrks-industrial-consultant-services">Industrial Consultant Services</Link></li>
             <li><Link to="/surya-projects">Surya Projects</Link></li>
             <li><Link to="/sri-vedantha-educational-trust">Sri Vedantha Educational Trust</Link></li>

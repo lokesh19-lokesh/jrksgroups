@@ -30,7 +30,7 @@ const Home = () => {
     },
     {
       id: 3,
-      title: "NRS TRUST Capital",
+      title: "NRS Trust Capital",
       subtitle: "Financial services and capital management for sustainable growth.",
       image: s3
     },
