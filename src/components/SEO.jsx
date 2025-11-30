@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 const SEO = ({ title, description, keywords, schema }) => {
-  const siteTitle = "Sri Rama Jayarama";
+  const siteTitle = "JRKS Group of Companies";
 
   useEffect(() => {
     // Update Title

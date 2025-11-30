@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const SriVedanthaEducationalTrust = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -42,6 +43,11 @@ const SriVedanthaEducationalTrust = () => {
 
   return (
     <div className="educational-trust-page" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: '#333', backgroundColor: '#fff' }}>
+      <SEO
+        title="Sri Vedantha Educational Trust"
+        description="Empowering the future through education and academic excellence."
+        keywords="Education, Scholarship, Skill Development, Community Outreach, Vocational Training"
+      />
 
       {/* Breadcrumbs */}
       <div style={{ padding: '1rem 5%', backgroundColor: '#f8f9fa', fontSize: '0.9rem', borderBottom: '1px solid #e9ecef' }}>

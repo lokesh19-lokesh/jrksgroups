@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import founderImage from '../assets/universalsolarpowersystems/founder.png';
 
 const UniversalPowerSystems = () => {
@@ -43,6 +44,11 @@ const UniversalPowerSystems = () => {
 
   return (
     <div className="universal-power-page" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: '#333', backgroundColor: '#fff' }}>
+      <SEO
+        title="Universal Solar Power Systems"
+        description="Leading solutions in power management, UPS systems, industrial batteries, and solar integration."
+        keywords="UPS, Industrial Batteries, Solar Power, Power Management, Energy Solutions"
+      />
 
       {/* Breadcrumbs */}
       <div style={{ padding: '1rem 5%', backgroundColor: '#f8f9fa', fontSize: '0.9rem', borderBottom: '1px solid #e9ecef' }}>

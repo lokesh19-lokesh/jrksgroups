@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const SuryaProjects = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -42,6 +43,11 @@ const SuryaProjects = () => {
 
   return (
     <div className="surya-projects-page" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: '#333', backgroundColor: '#fff' }}>
+      <SEO
+        title="Surya Projects"
+        description="Specializing in Civil, Electrical, Railway, and Government infrastructure projects."
+        keywords="Civil Contracts, Electrical Contracts, Railway Projects, Government Infrastructure, NMDC Projects"
+      />
 
       {/* Breadcrumbs */}
       <div style={{ padding: '1rem 5%', backgroundColor: '#f8f9fa', fontSize: '0.9rem', borderBottom: '1px solid #e9ecef' }}>

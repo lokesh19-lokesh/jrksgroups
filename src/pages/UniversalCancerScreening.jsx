@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const UniversalCancerScreening = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -29,6 +30,11 @@ const UniversalCancerScreening = () => {
 
   return (
     <div className="universal-cancer-screening-page" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: '#333', backgroundColor: '#fff' }}>
+      <SEO
+        title="Universal Cancer Screening"
+        description="Early detection saves lives. Comprehensive screening programs led by Dr. Lakshmi."
+        keywords="Cancer Screening, Breast Cancer, Cervical Cancer, Dr. Lakshmi, Early Detection"
+      />
 
       {/* Breadcrumbs */}
       <div style={{ padding: '1rem 5%', backgroundColor: '#f8f9fa', fontSize: '0.9rem', borderBottom: '1px solid #e9ecef' }}>
