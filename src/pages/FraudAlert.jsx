@@ -52,7 +52,7 @@ const FraudAlert = () => {
               It has come to our attention that certain unscrupulous individuals/agencies are falsely representing themselves as authorized agents or representatives of <strong>Jrks Group</strong>. They may be offering fraudulent employment opportunities, business partnerships, or demanding money in exchange for services.
             </p>
             <p style={{ marginBottom: '1.5rem' }}>
-              Please be aware that <strong>Jrks Group does not charge any fees</strong> for recruitment or business proposals. We do not authorize any third-party agencies to collect money on our behalf.
+              Please be aware that <strong>Jrks Group charges a nominal non-refundable application fee of ₹100 for job applications, which is payable ONLY through this official website</strong>. We do not authorize any third-party agencies, individuals, or other websites to collect money on our behalf. Any other demands for money in exchange for job offers or interviews are fraudulent.
             </p>
 
             <div style={{ backgroundColor: '#FFF8E7', padding: '1.5rem', borderRadius: '4px', borderLeft: '4px solid #D4AF37', margin: '2rem 0' }}>
