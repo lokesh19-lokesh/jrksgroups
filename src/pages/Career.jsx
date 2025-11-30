@@ -21,6 +21,7 @@ const Career = () => {
   const [selectedCompany, setSelectedCompany] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedJob, setSelectedJob] = useState(null);
+  const [showApplicationForm, setShowApplicationForm] = useState(false);
 
   const allJobs = [
     // Universal Solar Power Systems
@@ -207,10 +208,12 @@ const Career = () => {
 
   const handleApplyClick = (job) => {
     setSelectedJob(job);
+    setShowApplicationForm(false);
   };
 
   const closeModal = () => {
     setSelectedJob(null);
+    setShowApplicationForm(false);
   };
 
   return (
@@ -441,60 +444,136 @@ const Career = () => {
 
             <div style={{ padding: '2rem', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
               <div>
-                <h3 style={{ fontSize: '1.8rem', color: '#003366', margin: '0 0 0.5rem 0' }}>{selectedJob.title}</h3>
-                <p style={{ margin: 0, color: '#666', fontWeight: '500' }}>{selectedJob.company}</p>
+                <h3 style={{ fontSize: '1.8rem', color: '#003366', margin: '0 0 0.5rem 0' }}>
+                  {showApplicationForm ? 'Application Form' : selectedJob.title}
+                </h3>
+                <p style={{ margin: 0, color: '#666', fontWeight: '500' }}>
+                  {showApplicationForm ? `Applying for: ${selectedJob.title}` : selectedJob.company}
+                </p>
               </div>
               <button onClick={closeModal} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: '#999' }}>&times;</button>
             </div>
 
             <div style={{ padding: '2rem' }}>
-              <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#555' }}>
-                <span style={{ backgroundColor: '#f0f4f8', padding: '0.3rem 0.8rem', borderRadius: '20px' }}>📍 {selectedJob.location}</span>
-                <span style={{ backgroundColor: '#f0f4f8', padding: '0.3rem 0.8rem', borderRadius: '20px' }}>🕒 {selectedJob.type}</span>
-              </div>
+              {!showApplicationForm ? (
+                <>
+                  <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#555' }}>
+                    <span style={{ backgroundColor: '#f0f4f8', padding: '0.3rem 0.8rem', borderRadius: '20px' }}>📍 {selectedJob.location}</span>
+                    <span style={{ backgroundColor: '#f0f4f8', padding: '0.3rem 0.8rem', borderRadius: '20px' }}>🕒 {selectedJob.type}</span>
+                  </div>
 
-              <h4 style={{ fontSize: '1.1rem', color: '#333', marginBottom: '0.5rem' }}>Job Description</h4>
-              <p style={{ lineHeight: '1.6', color: '#555', marginBottom: '2rem' }}>
-                {selectedJob.description}
-              </p>
+                  <h4 style={{ fontSize: '1.1rem', color: '#333', marginBottom: '0.5rem' }}>Job Description</h4>
+                  <p style={{ lineHeight: '1.6', color: '#555', marginBottom: '2rem' }}>
+                    {selectedJob.description}
+                  </p>
 
-              <div style={{
-                backgroundColor: '#fff8e1',
-                border: '1px solid #ffe082',
-                padding: '1rem',
-                borderRadius: '8px',
-                marginBottom: '2rem',
-                display: 'flex',
-                alignItems: 'start',
-                gap: '0.8rem'
-              }}>
-                <span style={{ fontSize: '1.2rem' }}>⚠️</span>
-                <div>
-                  <strong style={{ display: 'block', color: '#b00020', marginBottom: '0.2rem' }}>Important Note:</strong>
-                  <span style={{ color: '#333', fontSize: '0.95rem' }}>
-                    To apply for this position, a non-refundable application fee of <strong>₹100</strong> is required.
-                  </span>
-                </div>
-              </div>
+                  <div style={{
+                    backgroundColor: '#fff8e1',
+                    border: '1px solid #ffe082',
+                    padding: '1rem',
+                    borderRadius: '8px',
+                    marginBottom: '2rem',
+                    display: 'flex',
+                    alignItems: 'start',
+                    gap: '0.8rem'
+                  }}>
+                    <span style={{ fontSize: '1.2rem' }}>⚠️</span>
+                    <div>
+                      <strong style={{ display: 'block', color: '#b00020', marginBottom: '0.2rem' }}>Important Note:</strong>
+                      <span style={{ color: '#333', fontSize: '0.95rem' }}>
+                        To apply for this position, a non-refundable application fee of <strong>₹100</strong> is required.
+                      </span>
+                    </div>
+                  </div>
 
-              <button style={{
-                width: '100%',
-                padding: '1rem',
-                backgroundColor: '#003366',
-                color: 'white',
-                border: 'none',
-                borderRadius: '6px',
-                fontSize: '1.1rem',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                transition: 'background-color 0.2s'
-              }}
-                onMouseOver={(e) => e.target.style.backgroundColor = '#002244'}
-                onMouseOut={(e) => e.target.style.backgroundColor = '#003366'}
-                onClick={() => alert("Redirecting to payment gateway...")}
-              >
-                Pay ₹100 & Apply Now
-              </button>
+                  <button style={{
+                    width: '100%',
+                    padding: '1rem',
+                    backgroundColor: '#003366',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '6px',
+                    fontSize: '1.1rem',
+                    fontWeight: 'bold',
+                    cursor: 'pointer',
+                    transition: 'background-color 0.2s'
+                  }}
+                    onMouseOver={(e) => e.target.style.backgroundColor = '#002244'}
+                    onMouseOut={(e) => e.target.style.backgroundColor = '#003366'}
+                    onClick={() => setShowApplicationForm(true)}
+                  >
+                    Pay ₹100 & Apply Now
+                  </button>
+                </>
+              ) : (
+                <form onSubmit={(e) => { e.preventDefault(); alert("Redirecting to payment gateway..."); }}>
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: '#333' }}>Full Name</label>
+                    <input type="text" required style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px' }} placeholder="Enter your full name" />
+                  </div>
+
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: '#333' }}>Phone Number</label>
+                    <input type="tel" required style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px' }} placeholder="Enter your phone number" />
+                  </div>
+
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: '#333' }}>Address</label>
+                    <textarea required style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px', minHeight: '80px' }} placeholder="Enter your full address"></textarea>
+                  </div>
+
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: '#333' }}>Role Applying For</label>
+                    <select
+                      defaultValue={selectedJob.title}
+                      style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px', backgroundColor: 'white' }}
+                    >
+                      {allJobs.map((job, idx) => (
+                        <option key={idx} value={job.title}>{job.title}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div style={{ marginBottom: '2rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: '#333' }}>Upload Resume</label>
+                    <input type="file" accept=".pdf,.doc,.docx" required style={{ width: '100%', padding: '0.5rem', border: '1px solid #ddd', borderRadius: '4px' }} />
+                    <small style={{ color: '#666', display: 'block', marginTop: '0.3rem' }}>Accepted formats: PDF, DOC, DOCX</small>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '1rem' }}>
+                    <button type="button" onClick={() => setShowApplicationForm(false)} style={{
+                      flex: 1,
+                      padding: '1rem',
+                      backgroundColor: 'transparent',
+                      color: '#666',
+                      border: '1px solid #ddd',
+                      borderRadius: '6px',
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      cursor: 'pointer'
+                    }}>
+                      Back
+                    </button>
+                    <button type="submit" style={{
+                      flex: 2,
+                      padding: '1rem',
+                      backgroundColor: '#003366',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '6px',
+                      fontSize: '1.1rem',
+                      fontWeight: 'bold',
+                      cursor: 'pointer',
+                      transition: 'background-color 0.2s'
+                    }}
+                      onMouseOver={(e) => e.target.style.backgroundColor = '#002244'}
+                      onMouseOut={(e) => e.target.style.backgroundColor = '#003366'}
+                    >
+                      Pay to Apply
+                    </button>
+                  </div>
+                </form>
+              )}
             </div>
 
           </div>
