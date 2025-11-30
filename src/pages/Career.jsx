@@ -1,13 +1,80 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Career = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCompany, setSelectedCompany] = useState('');
+  const [selectedLocation, setSelectedLocation] = useState('');
+
+  const allJobs = [
+    // Universal Solar Power Systems
+    { title: "Solar Installation Technician", company: "Universal Solar Power Systems", location: "Hyderabad", type: "Full Time" },
+    { title: "Sales Executive - Renewable Energy", company: "Universal Solar Power Systems", location: "Bangalore", type: "Full Time" },
+    { title: "Solar Engineering Intern", company: "Universal Solar Power Systems", location: "Hyderabad", type: "Internship" },
+
+    // Jrks Traders
+    { title: "Supply Chain Manager", company: "Jrks Traders", location: "Mumbai", type: "Full Time" },
+    { title: "Procurement Specialist", company: "Jrks Traders", location: "Delhi", type: "Full Time" },
+    { title: "Logistics Intern", company: "Jrks Traders", location: "Mumbai", type: "Internship" },
+
+    // NRS Trust Capital
+    { title: "Financial Analyst", company: "NRS Trust Capital", location: "Hyderabad", type: "Full Time" },
+    { title: "Loan Officer", company: "NRS Trust Capital", location: "Chennai", type: "Full Time" },
+    { title: "Finance Intern", company: "NRS Trust Capital", location: "Hyderabad", type: "Internship" },
+
+    // Industrial Consultant Services
+    { title: "Industrial Safety Consultant", company: "Industrial Consultant Services", location: "Pune", type: "Contract" },
+    { title: "Process Improvement Engineer", company: "Industrial Consultant Services", location: "Hyderabad", type: "Full Time" },
+    { title: "Industrial Management Intern", company: "Industrial Consultant Services", location: "Pune", type: "Internship" },
+
+    // Surya Projects
+    { title: "Civil Engineer", company: "Surya Projects", location: "Visakhapatnam", type: "Full Time" },
+    { title: "Project Manager", company: "Surya Projects", location: "Hyderabad", type: "Full Time" },
+    { title: "Civil Engineering Intern", company: "Surya Projects", location: "Visakhapatnam", type: "Internship" },
+
+    // Sri Vedantha Educational Trust
+    { title: "Program Coordinator", company: "Sri Vedantha Educational Trust", location: "Hyderabad", type: "Full Time" },
+    { title: "Vocational Trainer", company: "Sri Vedantha Educational Trust", location: "Rural Districts", type: "Part Time" },
+    { title: "Social Work Intern", company: "Sri Vedantha Educational Trust", location: "Hyderabad", type: "Internship" },
+
+    // Universal Cancer Screening
+    { title: "Community Health Worker", company: "Universal Cancer Screening", location: "Pan India", type: "Full Time" },
+    { title: "Medical Technician", company: "Universal Cancer Screening", location: "Hyderabad", type: "Full Time" },
+    { title: "Public Health Intern", company: "Universal Cancer Screening", location: "Hyderabad", type: "Internship" }
+  ];
+
+  const filteredJobs = allJobs.filter(job => {
+    const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.company.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCompany = selectedCompany ? job.company === selectedCompany : true;
+    const matchesLocation = selectedLocation ? job.location === selectedLocation : true;
+    return matchesSearch && matchesCompany && matchesLocation;
+  });
+
+  const companies = [
+    "Universal Solar Power Systems",
+    "Jrks Traders",
+    "NRS Trust Capital",
+    "Industrial Consultant Services",
+    "Surya Projects",
+    "Sri Vedantha Educational Trust",
+    "Universal Cancer Screening"
+  ];
+
+  const locations = ["Hyderabad", "Bangalore", "Mumbai", "Delhi", "Chennai", "Pune", "Visakhapatnam", "Pan India"];
+
   return (
     <div className="career-page" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: '#333', backgroundColor: '#f9f9f9' }}>
+      <SEO
+        title="Careers"
+        description="Explore job openings and internships across JRKS Group of Companies. Join us in shaping the future."
+        keywords="Careers, Jobs, Internships, JRKS Group, Employment, Work With Us"
+      />
 
       {/* Breadcrumbs */}
       <div style={{ padding: '1rem 5%', backgroundColor: '#fff', fontSize: '0.9rem', borderBottom: '1px solid #e9ecef' }}>
@@ -60,25 +127,38 @@ const Career = () => {
         }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <label style={{ fontWeight: '600', fontSize: '0.9rem', color: '#555' }}>Keywords</label>
-            <input type="text" placeholder="Job title or skill" style={{ padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px' }} />
+            <input
+              type="text"
+              placeholder="Job title, skill or company"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              style={{ padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px' }}
+            />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-            <label style={{ fontWeight: '600', fontSize: '0.9rem', color: '#555' }}>Function</label>
-            <select style={{ padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px', backgroundColor: 'white' }}>
-              <option value="">All Functions</option>
-              <option value="engineering">Engineering</option>
-              <option value="finance">Finance</option>
-              <option value="sales">Sales & Marketing</option>
-              <option value="operations">Operations</option>
+            <label style={{ fontWeight: '600', fontSize: '0.9rem', color: '#555' }}>Function (Company)</label>
+            <select
+              value={selectedCompany}
+              onChange={(e) => setSelectedCompany(e.target.value)}
+              style={{ padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px', backgroundColor: 'white' }}
+            >
+              <option value="">All Companies</option>
+              {companies.map((company, index) => (
+                <option key={index} value={company}>{company}</option>
+              ))}
             </select>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <label style={{ fontWeight: '600', fontSize: '0.9rem', color: '#555' }}>Location</label>
-            <select style={{ padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px', backgroundColor: 'white' }}>
+            <select
+              value={selectedLocation}
+              onChange={(e) => setSelectedLocation(e.target.value)}
+              style={{ padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px', backgroundColor: 'white' }}
+            >
               <option value="">All Locations</option>
-              <option value="hyderabad">Hyderabad</option>
-              <option value="mumbai">Mumbai</option>
-              <option value="delhi">Delhi</option>
+              {locations.map((loc, index) => (
+                <option key={index} value={loc}>{loc}</option>
+              ))}
             </select>
           </div>
           <button style={{
@@ -104,160 +184,84 @@ const Career = () => {
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-
-          {/* Job Card 1 */}
-          <div className="job-card" style={{
-            backgroundColor: 'white',
-            padding: '2rem',
-            borderRadius: '8px',
-            border: '1px solid #eee',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '1rem',
-            transition: 'transform 0.2s, box-shadow 0.2s'
-          }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = 'translateY(-3px)';
-              e.currentTarget.style.boxShadow = '0 5px 15px rgba(0,0,0,0.08)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}
-          >
-            <div>
-              <h3 style={{ fontSize: '1.3rem', color: '#003366', marginBottom: '0.5rem' }}>Senior Sales Manager</h3>
-              <div style={{ display: 'flex', gap: '1.5rem', color: '#666', fontSize: '0.9rem' }}>
-                <span>📍 Hyderabad</span>
-                <span>💼 Sales & Marketing</span>
-                <span>🕒 Full Time</span>
+          {filteredJobs.length > 0 ? (
+            filteredJobs.map((job, index) => (
+              <div key={index} className="job-card" style={{
+                backgroundColor: 'white',
+                padding: '2rem',
+                borderRadius: '8px',
+                border: '1px solid #eee',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: '1rem',
+                transition: 'transform 0.2s, box-shadow 0.2s'
+              }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-3px)';
+                  e.currentTarget.style.boxShadow = '0 5px 15px rgba(0,0,0,0.08)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <div>
+                  <h3 style={{ fontSize: '1.3rem', color: '#003366', marginBottom: '0.5rem' }}>{job.title}</h3>
+                  <div style={{ display: 'flex', gap: '1.5rem', color: '#666', fontSize: '0.9rem', flexWrap: 'wrap' }}>
+                    <span style={{ fontWeight: '600', color: '#D4AF37' }}>🏢 {job.company}</span>
+                    <span>📍 {job.location}</span>
+                    <span>🕒 {job.type}</span>
+                  </div>
+                </div>
+                <button style={{
+                  padding: '0.6rem 1.5rem',
+                  border: '1px solid #003366',
+                  backgroundColor: 'transparent',
+                  color: '#003366',
+                  borderRadius: '4px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s'
+                }}
+                  onMouseOver={(e) => {
+                    e.target.style.backgroundColor = '#003366';
+                    e.target.style.color = 'white';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.backgroundColor = 'transparent';
+                    e.target.style.color = '#003366';
+                  }}
+                >Apply Now</button>
               </div>
+            ))
+          ) : (
+            <div style={{ textAlign: 'center', padding: '2rem', color: '#666' }}>
+              <p>No jobs found matching your criteria.</p>
             </div>
-            <button style={{
-              padding: '0.6rem 1.5rem',
-              border: '1px solid #003366',
-              backgroundColor: 'transparent',
-              color: '#003366',
-              borderRadius: '4px',
-              fontWeight: '600',
-              cursor: 'pointer',
-              transition: 'all 0.2s'
-            }}
-              onMouseOver={(e) => {
-                e.target.style.backgroundColor = '#003366';
-                e.target.style.color = 'white';
-              }}
-              onMouseOut={(e) => {
-                e.target.style.backgroundColor = 'transparent';
-                e.target.style.color = '#003366';
-              }}
-            >Apply Now</button>
-          </div>
+          )}
+        </div>
+      </section>
 
-          {/* Job Card 2 */}
-          <div className="job-card" style={{
-            backgroundColor: 'white',
-            padding: '2rem',
-            borderRadius: '8px',
-            border: '1px solid #eee',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '1rem',
-            transition: 'transform 0.2s, box-shadow 0.2s'
-          }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = 'translateY(-3px)';
-              e.currentTarget.style.boxShadow = '0 5px 15px rgba(0,0,0,0.08)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}
-          >
-            <div>
-              <h3 style={{ fontSize: '1.3rem', color: '#003366', marginBottom: '0.5rem' }}>Industrial Engineer</h3>
-              <div style={{ display: 'flex', gap: '1.5rem', color: '#666', fontSize: '0.9rem' }}>
-                <span>📍 Hyderabad</span>
-                <span>💼 Engineering</span>
-                <span>🕒 Full Time</span>
-              </div>
-            </div>
-            <button style={{
-              padding: '0.6rem 1.5rem',
-              border: '1px solid #003366',
-              backgroundColor: 'transparent',
-              color: '#003366',
-              borderRadius: '4px',
-              fontWeight: '600',
-              cursor: 'pointer',
-              transition: 'all 0.2s'
-            }}
-              onMouseOver={(e) => {
-                e.target.style.backgroundColor = '#003366';
-                e.target.style.color = 'white';
-              }}
-              onMouseOut={(e) => {
-                e.target.style.backgroundColor = 'transparent';
-                e.target.style.color = '#003366';
-              }}
-            >Apply Now</button>
-          </div>
-
-          {/* Job Card 3 */}
-          <div className="job-card" style={{
-            backgroundColor: 'white',
-            padding: '2rem',
-            borderRadius: '8px',
-            border: '1px solid #eee',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '1rem',
-            transition: 'transform 0.2s, box-shadow 0.2s'
-          }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = 'translateY(-3px)';
-              e.currentTarget.style.boxShadow = '0 5px 15px rgba(0,0,0,0.08)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}
-          >
-            <div>
-              <h3 style={{ fontSize: '1.3rem', color: '#003366', marginBottom: '0.5rem' }}>Financial Analyst</h3>
-              <div style={{ display: 'flex', gap: '1.5rem', color: '#666', fontSize: '0.9rem' }}>
-                <span>📍 Mumbai</span>
-                <span>💼 Finance</span>
-                <span>🕒 Full Time</span>
-              </div>
-            </div>
-            <button style={{
-              padding: '0.6rem 1.5rem',
-              border: '1px solid #003366',
-              backgroundColor: 'transparent',
-              color: '#003366',
-              borderRadius: '4px',
-              fontWeight: '600',
-              cursor: 'pointer',
-              transition: 'all 0.2s'
-            }}
-              onMouseOver={(e) => {
-                e.target.style.backgroundColor = '#003366';
-                e.target.style.color = 'white';
-              }}
-              onMouseOut={(e) => {
-                e.target.style.backgroundColor = 'transparent';
-                e.target.style.color = '#003366';
-              }}
-            >Apply Now</button>
-          </div>
-
+      {/* General Application CTA */}
+      <section style={{ backgroundColor: '#003366', color: 'white', padding: '4rem 2rem', textAlign: 'center' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Don't see the right fit?</h2>
+          <p style={{ fontSize: '1.2rem', marginBottom: '2rem', opacity: 0.9 }}>
+            We are always looking for talented individuals. Send us your resume and we will keep it on file for future opportunities.
+          </p>
+          <Link to="/contact" style={{
+            display: 'inline-block',
+            padding: '1rem 2.5rem',
+            backgroundColor: '#D4AF37',
+            color: '#003366',
+            textDecoration: 'none',
+            fontWeight: 'bold',
+            borderRadius: '4px',
+            fontSize: '1.1rem',
+            transition: 'transform 0.2s'
+          }}>Contact HR Team</Link>
         </div>
       </section>
 
