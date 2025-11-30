@@ -32,6 +32,7 @@ const Footer = () => {
             <li><Link to="/jrks-industrial-consultant-services">Industrial Consultant Services</Link></li>
             <li><Link to="/surya-projects">Surya Projects</Link></li>
             <li><Link to="/sri-vedantha-educational-trust">Sri Vedantha Educational Trust</Link></li>
+            <li><Link to="/universal-cancer-screening">Universal Cancer Screening</Link></li>
           </ul>
         </div>
 

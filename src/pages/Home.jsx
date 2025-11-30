@@ -99,6 +99,14 @@ const Home = () => {
       image: education,
       bgColor: "#4B0082",
       textColor: "#ffffff"
+    },
+    {
+      title: "Universal Cancer Screening",
+      description: "Early detection saves lives. Comprehensive screening programs led by Dr. Lakshmi.",
+      link: "/universal-cancer-screening",
+      image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      bgColor: "#D63384",
+      textColor: "#ffffff"
     }
   ];
 
