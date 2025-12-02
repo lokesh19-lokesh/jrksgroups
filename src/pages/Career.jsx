@@ -22,6 +22,61 @@ const Career = () => {
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedJob, setSelectedJob] = useState(null);
   const [showApplicationForm, setShowApplicationForm] = useState(false);
+const [paymentSuccess, setPaymentSuccess] = useState(false);
+const [paymentId, setPaymentId] = useState("");
+
+
+// Form data
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    address: "",
+    role: "",
+    resume: null
+  });
+
+  // Input handler
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    setFormData({
+      ...formData,
+      [name]: files ? files[0] : value
+    });
+  };
+
+  // ⭐ Razorpay Payment Function
+
+const handlePayment = () => {
+  const options = {
+    key: "rzp_test_AOZA9FvJqbOWam", // Replace with your Razorpay key
+    amount: 100 * 100,
+    currency: "INR",
+    name: "Career Application",
+    description: "Job Application Fee",
+    
+    handler: function (response) {
+      setPaymentId(response.razorpay_payment_id);
+
+      // Close form and show success popup
+      setShowApplicationForm(false);
+      setPaymentSuccess(true);
+      // setSelectedJob(null);
+    },
+
+    theme: { color: "#003366" }
+  };
+
+  const rzp = new window.Razorpay(options);
+  rzp.open();
+};
+
+
+
+  // Form submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handlePayment(); // Start payment
+  };
 
   const allJobs = [
     // Universal Solar Power Systems
@@ -415,111 +470,247 @@ const Career = () => {
         </div>
       </section>
 
-      {/* Job Application Modal */}
-      {selectedJob && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'rgba(0,0,0,0.6)',
-          zIndex: 1000,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '1rem'
-        }} onClick={closeModal}>
-          <div style={{
-            backgroundColor: 'white',
-            borderRadius: '12px',
-            maxWidth: '600px',
-            width: '100%',
-            maxHeight: '90vh',
-            overflowY: 'auto',
-            position: 'relative',
-            boxShadow: '0 10px 40px rgba(0,0,0,0.2)',
-            animation: 'fadeIn 0.3s ease-out'
-          }} onClick={(e) => e.stopPropagation()}>
 
-            <div style={{ padding: '2rem', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
-              <div>
-                <h3 style={{ fontSize: '1.8rem', color: '#003366', margin: '0 0 0.5rem 0' }}>
-                  {showApplicationForm ? 'Application Form' : selectedJob.title}
-                </h3>
-                <p style={{ margin: 0, color: '#666', fontWeight: '500' }}>
-                  {showApplicationForm ? `Applying for: ${selectedJob.title}` : selectedJob.company}
-                </p>
-              </div>
-              <button onClick={closeModal} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: '#999' }}>&times;</button>
+      {/* Job Application Modal */}
+     {selectedJob && (
+  <div
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      backgroundColor: "rgba(0,0,0,0.6)",
+      zIndex: 1000,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "1rem",
+    }}
+    onClick={closeModal}
+  >
+    <div
+      style={{
+        backgroundColor: "white",
+        borderRadius: "12px",
+        maxWidth: "600px",
+        width: "100%",
+        maxHeight: "90vh",
+        overflowY: "auto",
+        position: "relative",
+        boxShadow: "0 10px 40px rgba(0,0,0,0.2)",
+        animation: "fadeIn 0.3s ease-out",
+      }}
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* ----------- HEADER ---------- */}
+      <div
+        style={{
+          padding: "2rem",
+          borderBottom: "1px solid #eee",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "start",
+        }}
+      >
+        <div>
+          <h3
+            style={{
+              fontSize: "1.8rem",
+              color: "#003366",
+              margin: "0 0 0.5rem 0",
+            }}
+          >
+            {paymentSuccess
+              ? "Payment Successful"
+              : showApplicationForm
+              ? "Application Form"
+              : selectedJob.title}
+          </h3>
+
+          {!paymentSuccess && (
+            <p style={{ margin: 0, color: "#666", fontWeight: "500" }}>
+              {showApplicationForm
+                ? `Applying for: ${selectedJob.title}`
+                : selectedJob.company}
+            </p>
+          )}
+        </div>
+
+        <button
+          onClick={closeModal}
+          style={{
+            background: "none",
+            border: "none",
+            fontSize: "1.5rem",
+            cursor: "pointer",
+            color: "#999",
+          }}
+        >
+          &times;
+        </button>
+      </div>
+
+      {/* ----------- BODY ---------- */}
+      <div style={{ padding: "2rem" }}>
+        
+        {/* ⭐ PAYMENT SUCCESS POPUP ⭐ */}
+        {paymentSuccess ? (
+          <div
+            style={{
+              padding: "2rem",
+              textAlign: "center",
+              animation: "fadeIn 0.3s ease-out",
+            }}
+          >
+            <h2
+              style={{ color: "green", fontSize: "1.7rem", marginBottom: "1rem" }}
+            >
+              🎉 Payment Successful!
+            </h2>
+
+            <p style={{ color: "#444", marginBottom: "1rem", fontSize: "1rem" }}>
+              Your application has been submitted successfully.
+            </p>
+
+            <p
+              style={{
+                background: "#f0f4f8",
+                padding: "0.8rem",
+                borderRadius: "8px",
+                marginBottom: "1.5rem",
+                fontSize: "0.9rem",
+              }}
+            >
+              <strong>Payment ID:</strong>
+              <br />
+              {paymentId}
+            </p>
+
+            <button
+              onClick={() => {
+                setPaymentSuccess(false);
+                setSelectedJob(null);
+              }}
+              style={{
+                backgroundColor: "#003366",
+                padding: "0.8rem 1.5rem",
+                color: "white",
+                border: "none",
+                borderRadius: "6px",
+                fontSize: "1rem",
+                cursor: "pointer",
+              }}
+            >
+              Close
+            </button>
+          </div>
+        ) : !showApplicationForm ? (
+          /* -----------------------
+           |   JOB DETAILS VIEW   |
+           ----------------------- */
+          <>
+            <div
+              style={{
+                display: "flex",
+                gap: "1rem",
+                marginBottom: "1.5rem",
+                fontSize: "0.9rem",
+                color: "#555",
+              }}
+            >
+              <span
+                style={{
+                  backgroundColor: "#f0f4f8",
+                  padding: "0.3rem 0.8rem",
+                  borderRadius: "20px",
+                }}
+              >
+                📍 {selectedJob.location}
+              </span>
+              <span
+                style={{
+                  backgroundColor: "#f0f4f8",
+                  padding: "0.3rem 0.8rem",
+                  borderRadius: "20px",
+                }}
+              >
+                🕒 {selectedJob.type}
+              </span>
             </div>
 
-            <div style={{ padding: '2rem' }}>
-              {!showApplicationForm ? (
-                <>
-                  <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#555' }}>
-                    <span style={{ backgroundColor: '#f0f4f8', padding: '0.3rem 0.8rem', borderRadius: '20px' }}>📍 {selectedJob.location}</span>
-                    <span style={{ backgroundColor: '#f0f4f8', padding: '0.3rem 0.8rem', borderRadius: '20px' }}>🕒 {selectedJob.type}</span>
-                  </div>
+            <h4 style={{ fontSize: "1.1rem", color: "#333", marginBottom: "0.5rem" }}>
+              Job Description
+            </h4>
+            <p style={{ lineHeight: "1.6", color: "#555", marginBottom: "2rem" }}>
+              {selectedJob.description}
+            </p>
 
-                  <h4 style={{ fontSize: '1.1rem', color: '#333', marginBottom: '0.5rem' }}>Job Description</h4>
-                  <p style={{ lineHeight: '1.6', color: '#555', marginBottom: '2rem' }}>
-                    {selectedJob.description}
-                  </p>
-
-                  <div style={{
-                    backgroundColor: '#fff8e1',
-                    border: '1px solid #ffe082',
-                    padding: '1rem',
-                    borderRadius: '8px',
-                    marginBottom: '2rem',
-                    display: 'flex',
-                    alignItems: 'start',
-                    gap: '0.8rem'
-                  }}>
-                    <span style={{ fontSize: '1.2rem' }}>⚠️</span>
-                    <div>
-                      <strong style={{ display: 'block', color: '#b00020', marginBottom: '0.2rem' }}>Important Note:</strong>
-                      <span style={{ color: '#333', fontSize: '0.95rem' }}>
-                        To apply for this position, a non-refundable application fee of <strong>₹100</strong> is required.
-                      </span>
-                    </div>
-                  </div>
-
-                  <button style={{
-                    width: '100%',
-                    padding: '1rem',
-                    backgroundColor: '#003366',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '6px',
-                    fontSize: '1.1rem',
-                    fontWeight: 'bold',
-                    cursor: 'pointer',
-                    transition: 'background-color 0.2s'
+            <div
+              style={{
+                backgroundColor: "#fff8e1",
+                border: "1px solid #ffe082",
+                padding: "1rem",
+                borderRadius: "8px",
+                marginBottom: "2rem",
+                display: "flex",
+                alignItems: "start",
+                gap: "0.8rem",
+              }}
+            >
+              <span style={{ fontSize: "1.2rem" }}>⚠️</span>
+              <div>
+                <strong
+                  style={{
+                    display: "block",
+                    color: "#b00020",
+                    marginBottom: "0.2rem",
                   }}
-                    onMouseOver={(e) => e.target.style.backgroundColor = '#002244'}
-                    onMouseOut={(e) => e.target.style.backgroundColor = '#003366'}
-                    onClick={() => setShowApplicationForm(true)}
-                  >
-                    Pay ₹100 & Apply Now
-                  </button>
-                </>
-              ) : (
-                <form onSubmit={(e) => { e.preventDefault(); alert("Redirecting to payment gateway..."); }}>
+                >
+                  Important Note:
+                </strong>
+                <span style={{ color: "#333", fontSize: "0.95rem" }}>
+                  To apply for this position, a non-refundable application fee of{" "}
+                  <strong>₹100</strong> is required.
+                </span>
+              </div>
+            </div>
+
+            <button
+              style={{
+                width: "100%",
+                padding: "1rem",
+                backgroundColor: "#003366",
+                color: "white",
+                border: "none",
+                borderRadius: "6px",
+                fontSize: "1.1rem",
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+              onClick={() => setShowApplicationForm(true)}
+            >
+              Pay ₹100 & Apply Now
+            </button>
+          </>
+        ) : (
+          /* -----------------------
+           |   APPLICATION FORM   |
+           ----------------------- */
+          <form onSubmit={handleSubmit}>
                   <div style={{ marginBottom: '1.5rem' }}>
                     <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: '#333' }}>Full Name</label>
-                    <input type="text" required style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px' }} placeholder="Enter your full name" />
+                    <input onChange={handleChange} type="text" required style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px' }} placeholder="Enter your full name" />
                   </div>
 
                   <div style={{ marginBottom: '1.5rem' }}>
                     <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: '#333' }}>Phone Number</label>
-                    <input type="tel" required style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px' }} placeholder="Enter your phone number" />
+                    <input onChange={handleChange} type="tel" required style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px' }} placeholder="Enter your phone number" />
                   </div>
 
                   <div style={{ marginBottom: '1.5rem' }}>
                     <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: '#333' }}>Address</label>
-                    <textarea required style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px', minHeight: '80px' }} placeholder="Enter your full address"></textarea>
+                    <textarea onChange={handleChange} required style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px', minHeight: '80px' }} placeholder="Enter your full address"></textarea>
                   </div>
 
                   <div style={{ marginBottom: '1.5rem' }}>
@@ -527,7 +718,7 @@ const Career = () => {
                     <select
                       defaultValue={selectedJob.title}
                       style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px', backgroundColor: 'white' }}
-                    >
+                    onChange={handleChange}>
                       {allJobs.map((job, idx) => (
                         <option key={idx} value={job.title}>{job.title}</option>
                       ))}
@@ -536,7 +727,7 @@ const Career = () => {
 
                   <div style={{ marginBottom: '2rem' }}>
                     <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: '#333' }}>Upload Resume</label>
-                    <input type="file" accept=".pdf,.doc,.docx" required style={{ width: '100%', padding: '0.5rem', border: '1px solid #ddd', borderRadius: '4px' }} />
+                    <input onChange={handleChange} type="file" accept=".pdf,.doc,.docx" required style={{ width: '100%', padding: '0.5rem', border: '1px solid #ddd', borderRadius: '4px' }} />
                     <small style={{ color: '#666', display: 'block', marginTop: '0.3rem' }}>Accepted formats: PDF, DOC, DOCX</small>
                   </div>
 
@@ -573,12 +764,15 @@ const Career = () => {
                     </button>
                   </div>
                 </form>
-              )}
-            </div>
+        )}
+      </div>
+    </div>
+  </div>
+)}
 
-          </div>
-        </div>
-      )}
+      {/* PAYMENT SUCCESS POPUP */}
+
+
 
       <style>
         {`
