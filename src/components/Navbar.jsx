@@ -41,7 +41,7 @@ const Navbar = () => {
       <div className="top-bar">
         <div className="top-bar-content">
           <div className="dealer-info">
-            <span className="dealer-text">Steel Authority of India dealers <span className="dealer-highlight">Jrks</span></span>
+            <span className="dealer-text">Steel Authority of India dealers <span className="dealer-highlight">JRKSGROUP</span></span>
           </div>
           <div className="top-links">
             <Link to="/fraud-alert">Fraud Alert</Link>
@@ -54,7 +54,7 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="navbar-brand">
           <Link to="/">
-            <img src={logo} alt="Jrks Group" className="navbar-logo" />
+            <img src={logo} alt="JRKSGROUP" className="navbar-logo" />
           </Link>
           <button className="hamburger" onClick={toggleMenu}>
             <span className="bar"></span>

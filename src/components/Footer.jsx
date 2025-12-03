@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section" style={{ flex: '1.5' }}>
-          <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#fff' }}>Jrks Group</h3>
+          <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#fff' }}>JRKSGROUP</h3>
           <p style={{ lineHeight: '1.6', color: '#ccc', maxWidth: '300px' }}>
             A diversified conglomerate committed to excellence in Steel, Power, Finance, Infrastructure, and Education.
             Building a sustainable future through innovation and integrity.
@@ -45,7 +45,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Jrks Group. All rights reserved. | Design by <a href="https://thepatternscompany.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--secondary-color)', textDecoration: 'none' }}>The Patterns Company</a></p>
+        <p>&copy; {new Date().getFullYear()} JRKSGROUP. All rights reserved. | Design by <a href="https://thepatternscompany.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--secondary-color)', textDecoration: 'none' }}>The Patterns Company</a></p>
       </div>
     </footer>
   );

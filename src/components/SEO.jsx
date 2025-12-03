@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 const SEO = ({ title, description, keywords, schema }) => {
-  const siteTitle = "JRKS Group of Companies";
+  const siteTitle = "JRKSGROUP";
 
   useEffect(() => {
     // Update Title
@@ -14,7 +14,7 @@ const SEO = ({ title, description, keywords, schema }) => {
       metaDesc.name = "description";
       document.head.appendChild(metaDesc);
     }
-    metaDesc.content = description || "Jrks Group - A diversified conglomerate.";
+    metaDesc.content = description || "JRKSGROUP - A diversified conglomerate.";
 
     // Update Meta Keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -23,7 +23,7 @@ const SEO = ({ title, description, keywords, schema }) => {
       metaKeywords.name = "keywords";
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.content = keywords || "Jrks Group, Steel, Power, Finance";
+    metaKeywords.content = keywords || "JRKSGROUP, Steel, Power, Finance";
 
     // Add Structured Data (JSON-LD)
     if (schema) {
