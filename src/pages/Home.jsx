@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import SEO from '../components/SEO';
-import s1 from '../assets/s12.jpg';
-import s2 from '../assets/s2.png';
-import s3 from '../assets/s3.jpeg';
-import s4 from '../assets/s4.jpeg';
+import s1 from '../assets/1.png';
+import s2 from '../assets/2.png';
+import s3 from '../assets/3.png';
+import s4 from '../assets/4.png';
 import businessBg from '../assets/SteelAuthorityofIndiadealers.jpg';
 import solar from '../assets/solar.jpeg';
 import aboutimage from '../assets/about.jpeg';
@@ -42,14 +46,6 @@ const Home = () => {
     }
   ];
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 2000);
-    return () => clearInterval(timer);
-  }, [currentSlide]);
 
   const businesses = [
     {
@@ -137,21 +133,45 @@ const Home = () => {
         description="Jrks Group - Leading solutions in Steel Trading, Power Systems, Financial Services, and more."
         schema={schema}
       />
-      <section className="hero-section" style={{ backgroundImage: `url(${slides[currentSlide].image})` }}>
-        <div className="hero-content">
-          <h1>{slides[currentSlide].title}</h1>
-          <p>{slides[currentSlide].subtitle}</p>
-          <Link to="/contact" className="cta-button">Partner With Us</Link>
-        </div>
-        <div className="slider-dots">
-          {slides.map((_, index) => (
-            <span
-              key={index}
-              className={`dot ${index === currentSlide ? 'active' : ''}`}
-              onClick={() => setCurrentSlide(index)}
-            ></span>
+      <section className="hero-section">
+
+        <Slider
+          autoplay={true}
+          autoplaySpeed={2500}
+          dots={true}
+          infinite={true}
+          speed={800}
+          // fade={true}
+          arrows={false}
+          pauseOnHover={false}
+        >
+          {slides.map((slide) => (
+            <div key={slide.id}>
+              <div
+                className="hero-slide"
+                style={{
+                  backgroundImage: `url(${slide.image})`,
+                  height: "100vh",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  position: "relative"
+                }}
+              >
+                <div className="hero-content">
+                  <h1>{slide.title}</h1>
+                  <p>{slide.subtitle}</p>
+
+                  <Link to="/contact" className="cta-button">
+                    Partner With Us
+                  </Link>
+                </div>
+
+                <div className="overlay"></div>
+              </div>
+            </div>
           ))}
-        </div>
+        </Slider>
+
       </section>
 
       <section className="section-container" style={{ backgroundColor: '#fff', paddingBottom: '2rem' }}>
