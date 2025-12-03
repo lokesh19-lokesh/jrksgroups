@@ -428,7 +428,7 @@ body.dark-mode .search-overlay input {
   }
 
   .navbar-logo {
-    height: 60px;
+    height: 80px;
     /* Normal size for mobile */
     position: static;
     /* Reset absolute positioning */
