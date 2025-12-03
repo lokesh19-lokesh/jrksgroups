@@ -38,17 +38,7 @@ const Navbar = () => {
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''} ${isHome ? 'home-mode' : ''}`}>
       {/* Top Bar */}
-      <div className="top-bar">
-        <div className="top-bar-content">
-          <div className="dealer-info">
-            <span className="dealer-text">Steel Authority of India dealers <span className="dealer-highlight">JRKSGROUP</span></span>
-          </div>
-          <div className="top-links">
-            <Link to="/fraud-alert">Fraud Alert</Link>
-            <Link to="/contact">Contact Us</Link>
-          </div>
-        </div>
-      </div>
+
 
       {/* Main Navbar */}
       <nav className="navbar">

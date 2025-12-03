@@ -4,7 +4,7 @@
   /* Corporate Palette inspired by RIL */
   --primary-color: #003366;
   /* Deep Blue */
-  --secondary-color: #D4AF37;
+  --secondary-color: #fff8e7;
   /* Gold Accent */
   --accent-color: #0056b3;
   /* Lighter Blue for interactions */
@@ -148,9 +148,9 @@ a {
 }
 
 .navbar-logo {
-  height: 140px;
+  height: auto;
   /* Large logo */
-  width: auto;
+  width: 100px;
   object-fit: contain;
   position: absolute;
   top: -45px;
@@ -569,7 +569,7 @@ body.dark-mode .search-overlay input {
 .hero-section {
   position: relative;
   height: 100vh;
-  background-color: #003366;
+  /* background-color: #003366; */
   /* Fallback color */
   /* Placeholder Image */
   background-size: cover;
@@ -1114,7 +1114,7 @@ body.dark-mode .search-overlay input {
   cursor: pointer;
   text-transform: uppercase;
   transition: background-color 0.2s;
-  height: 46px;
+  /* height: 46px; */
   /* Match input height roughly */
 }
 
@@ -1225,14 +1225,14 @@ body.dark-mode .search-overlay input {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent;
+  background-color: #FFF8E7;
   box-shadow: none;
   border-bottom: none;
 }
 
 .site-header.home-mode .top-bar,
 .site-header.home-mode .navbar {
-  background-color: transparent;
+  /* background-color: transparent; */
   box-shadow: none;
   border: none;
 }
@@ -1287,16 +1287,7 @@ body.dark-mode .search-overlay input {
 /* Ensure dropdowns are still readable */
 .site-header.home-mode .dropdown-menu {}
 
-/* Scrolled State (Solid) */
-.site-header.home-mode.scrolled {
-  font-weight: 700;
-  border-radius: 4px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background-color 0.2s;
-  height: 46px;
-  /* Match input height roughly */
-}
+
 
 .search-btn:hover {
   background-color: #e5c150;
@@ -1400,15 +1391,7 @@ body.dark-mode .search-overlay input {
 }
 
 /* Transparent Navbar Styles (Home Page Only - Desktop) */
-.site-header.home-mode {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: transparent;
-  box-shadow: none;
-  border-bottom: none;
-}
+
 
 .site-header.home-mode .top-bar,
 .site-header.home-mode .navbar {
@@ -1423,7 +1406,7 @@ body.dark-mode .search-overlay input {
 .site-header.home-mode .navbar-links a,
 .site-header.home-mode .navbar-icons a,
 .site-header.home-mode .dropdown-toggle {
-  color: #fff;
+  color: #000000;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
