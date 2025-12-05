@@ -595,8 +595,10 @@ body.dark-mode .search-overlay input {
 
 .hero-content h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
   color: white;
+  line-height: 1.2;
+  text-transform: uppercase;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
@@ -1538,6 +1540,9 @@ body.dark-mode .search-overlay input {
 }
 .news-hero-bg.industry{
   background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+}
+.news-hero-bg.contact{
+  background-image: url('/src/assets/contact.jpg');
 }
 .news-hero-content {
   position: relative;
