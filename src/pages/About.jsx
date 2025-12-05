@@ -48,33 +48,27 @@ const About = () => {
   return (
     <div className="about-page">
       {/* Hero Section */}
-      <section className="hero-section" style={{
-        height: '60vh',
-        backgroundImage: 'url(https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        position: 'relative',
-        color: 'white',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center'
-      }}>
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.6)',
-          zIndex: 1
-        }}></div>
-        <div className="hero-content" style={{ position: 'relative', zIndex: 2, maxWidth: '800px', padding: '0 2rem' }}>
-          <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>About Us</h1>
-          <p style={{ fontSize: '1.5rem', fontWeight: '300' }}>Building a legacy of trust, excellence, and diversified growth.</p>
+    
+
+ <section className="news-hero">
+        <div className="news-hero-bg about"></div>
+        <div className="section-container news-hero-content">
+          <div style={{ maxWidth: '600px', margin: '0 auto 0 0' }}>
+            <div style={{
+              width: '50px',
+              height: '5px',
+              backgroundColor: '#D4AF37',
+              marginBottom: '2rem'
+            }}></div>
+            <h1 className="news-hero-title">
+             About Us
+            </h1>
+            <p className="news-hero-subtitle">
+              Building a legacy of trust, excellence, and diversified growth.
+            </p>
+          </div>
         </div>
       </section>
-
       {/* Our Story */}
       <section className="section-container">
         <div className="section-title">

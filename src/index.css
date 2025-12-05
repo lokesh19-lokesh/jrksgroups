@@ -1507,12 +1507,38 @@ body.dark-mode .search-overlay input {
   right: 0;
   width: 60%;
   height: 100%;
-  background-image: url('/src/assets/nm.avif');
+
   background-size: cover;
   background-position: center;
   clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
 }
-
+.news-hero-bg.news{
+  background-image: url('/src/assets/nm.avif');
+}
+.news-hero-bg.about{
+  background-image: url('/src/assets/nm.avif');
+}
+.news-hero-bg.power{
+  background-image: url('https://images.unsplash.com/photo-1513828583688-c52646db42da?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+}
+.news-hero-bg.cancer{
+  background-image: url('https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+}
+.news-hero-bg.surya{
+  background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+}
+.news-hero-bg.sri{
+  background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+}
+.news-hero-bg.nrs{
+  background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+}
+.news-hero-bg.jrks{
+  background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+}
+.news-hero-bg.industry{
+  background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+}
 .news-hero-content {
   position: relative;
   z-index: 2;

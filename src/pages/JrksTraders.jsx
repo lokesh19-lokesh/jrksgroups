@@ -57,33 +57,24 @@ const JrksTraders = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="hero-section" style={{
-        height: '60vh',
-        backgroundImage: 'url(https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        position: 'relative',
-        color: 'white',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        padding: '0 2rem'
-      }}>
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.7)',
-          zIndex: 1
-        }}></div>
-        <div className="hero-content" style={{ maxWidth: '900px', position: 'relative', zIndex: 2 }}>
-          <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', fontWeight: '700', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>JRKS Traders</h1>
-          <p style={{ fontSize: '1.5rem', opacity: '1', textShadow: '1px 1px 2px rgba(0,0,0,0.5)', maxWidth: '800px', margin: '0 auto' }}>
-            Premier Trading Partner for Steel and Solar Infrastructure.
-          </p>
+     
+ <section className="news-hero">
+        <div className="news-hero-bg jrks"></div>
+        <div className="section-container news-hero-content">
+          <div style={{ maxWidth: '600px', margin: '0 auto 0 0' }}>
+            <div style={{
+              width: '50px',
+              height: '5px',
+              backgroundColor: '#D4AF37',
+              marginBottom: '2rem'
+            }}></div>
+            <h1 className="news-hero-title">
+              JRKS Traders
+            </h1>
+            <p className="news-hero-subtitle">
+              Premier Trading Partner for Steel and Solar Infrastructure.
+            </p>
+          </div>
         </div>
       </section>
 
