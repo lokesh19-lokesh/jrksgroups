@@ -58,21 +58,42 @@ const handleSubmit = async (e) => {
   form.append("role", selectedJob.title);
   form.append("resume", formData.resume);
 
-  const res = await fetch("http://localhost/apply.php",  {
-    method: "POST",
-    body: form,
-  });
+  try {
+    const res = await fetch("http://localhost/apply.php", {
+      method: "POST",
+      body: form,
+    });
 
-  const data = await res.json();
-  setLoading(false);
+    const text = await res.text();      // 👈 read raw text first
+    console.log("RAW RESPONSE FROM PHP:", text);
 
-  if (data.success) {
-    setShowApplicationForm(false);
-    setSubmitSuccess(true);
-  } else {
-    alert("Something went wrong. Try again!");
+    let data;
+    try {
+      data = JSON.parse(text);          // 👈 try to parse JSON
+    } catch (err) {
+      console.error("JSON parse error:", err);
+      alert("Server returned invalid response");
+      setLoading(false);
+      return;
+    }
+
+    console.log("PARSED JSON:", data);
+
+    setLoading(false);
+
+    if (data.success) {
+      setShowApplicationForm(false);
+      setSubmitSuccess(true);
+    } else {
+      alert("Something went wrong: " + (data.error || "Try again!"));
+    }
+  } catch (error) {
+    console.error("Fetch error:", error);
+    alert("Unable to connect to server");
+    setLoading(false);
   }
 };
+
 
 
   // Form data
