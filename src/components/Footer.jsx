@@ -40,7 +40,7 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <p>123 Corporate Park,<br />Hyderabad, India</p>
           <p style={{ marginTop: '0.5rem' }}>Email: <a href="mailto:info@jrksgroup.com" style={{ color: 'var(--secondary-color)' }}>info@jrksgroup.com</a></p>
-          <p>Phone: +91 123 456 7890</p>
+          <p>Phone: +91 93908 00446</p>
         </div>
       </div>
 

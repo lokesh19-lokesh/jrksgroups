@@ -1085,33 +1085,7 @@ body.dark-mode .search-overlay input {
   border-bottom: none;
 }
 
-.site-header.home-mode .top-bar,
-.site-header.home-mode .navbar {
-  background-color: transparent;
-  box-shadow: none;
-  border: none;
-}
 
-/* Ensure text is white on transparent background */
-.site-header.home-mode .top-links a,
-.site-header.home-mode .dealer-text,
-.site-header.home-mode .navbar-links a,
-.site-header.home-mode .navbar-icons a,
-.site-header.home-mode .dropdown-toggle {
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.site-header.home-mode .dealer-info {
-  background-color: transparent;
-  box-shadow: none;
-  padding: 0;
-}
-
-.site-header.home-mode .navbar-links>li>a::after,
-.site-header.home-mode .dropdown-toggle::after {
-  background-color: #fff;
-}
 
 /* Scrolled State (Solid) */
 .site-header.home-mode.scrolled {
@@ -1225,44 +1199,7 @@ body.dark-mode .search-overlay input {
   animation-fill-mode: both;
 }
 
-/* Transparent Navbar Styles (Home Page Only - Desktop) */
-.site-header.home-mode {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #FFF8E7;
-  box-shadow: none;
-  border-bottom: none;
-}
 
-.site-header.home-mode .top-bar,
-.site-header.home-mode .navbar {
-  /* background-color: transparent; */
-  box-shadow: none;
-  border: none;
-}
-
-/* Ensure text is white on transparent background */
-.site-header.home-mode .top-links a,
-.site-header.home-mode .dealer-text,
-.site-header.home-mode .navbar-links a,
-.site-header.home-mode .navbar-icons a,
-.site-header.home-mode .dropdown-toggle {
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.site-header.home-mode .dealer-info {
-  background-color: transparent;
-  box-shadow: none;
-  padding: 0;
-}
-
-.site-header.home-mode .navbar-links>li>a::after,
-.site-header.home-mode .dropdown-toggle::after {
-  background-color: #fff;
-}
 
 /* Scrolled State (Solid) */
 .site-header.home-mode.scrolled {
@@ -1291,7 +1228,7 @@ body.dark-mode .search-overlay input {
 }
 
 /* Ensure dropdowns are still readable */
-.site-header.home-mode .dropdown-menu {}
+
 
 
 
@@ -1399,33 +1336,7 @@ body.dark-mode .search-overlay input {
 /* Transparent Navbar Styles (Home Page Only - Desktop) */
 
 
-.site-header.home-mode .top-bar,
-.site-header.home-mode .navbar {
-  background-color: transparent;
-  box-shadow: none;
-  border: none;
-}
 
-/* Ensure text is white on transparent background */
-.site-header.home-mode .top-links a,
-.site-header.home-mode .dealer-text,
-.site-header.home-mode .navbar-links a,
-.site-header.home-mode .navbar-icons a,
-.site-header.home-mode .dropdown-toggle {
-  color: #000000;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.site-header.home-mode .dealer-info {
-  background-color: transparent;
-  box-shadow: none;
-  padding: 0;
-}
-
-.site-header.home-mode .navbar-links>li>a::after,
-.site-header.home-mode .dropdown-toggle::after {
-  background-color: #fff;
-}
 
 /* Scrolled State (Solid) */
 .site-header.home-mode.scrolled {

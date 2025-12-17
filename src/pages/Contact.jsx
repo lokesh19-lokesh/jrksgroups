@@ -73,8 +73,7 @@ const Contact = () => {
                 <div style={{ fontSize: '1.5rem', color: '#D4AF37', marginTop: '3px' }}>📞</div>
                 <div>
                   <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem' }}>Phone</h4>
-                  <p style={{ margin: 0, color: '#666' }}>+91 123 456 7890</p>
-                  <p style={{ margin: 0, color: '#666' }}>+91 040 1234 5678</p>
+                  <p style={{ margin: 0, color: '#666' }}>+91 93908 00446</p>
                 </div>
               </div>
 
