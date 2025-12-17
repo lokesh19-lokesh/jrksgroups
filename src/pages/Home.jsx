@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import SEO from '../components/SEO';
+import heroVideo from '../assets/herosection/hero2.mp4';
 import s1 from '../assets/1.png';
 import s2 from '../assets/2.png';
 import s3 from '../assets/3.png';
@@ -134,44 +132,17 @@ const Home = () => {
         schema={schema}
       />
       <section className="hero-section">
-
-        <Slider
-          autoplay={true}
-          autoplaySpeed={2500}
-          dots={true}
-          infinite={true}
-          speed={800}
-          // fade={true}
-          arrows={false}
-          pauseOnHover={false}
-        >
-          {slides.map((slide) => (
-            <div key={slide.id}>
-              <div
-                className="hero-slide"
-                style={{
-                  backgroundImage: `url(${slide.image})`,
-                  height: "100vh",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  position: "relative"
-                }}
-              >
-                <div className="hero-content">
-                  <h1>{slide.title}</h1>
-                  <p>{slide.subtitle}</p>
-
-                  <Link to="/contact" className="cta-button">
-                    Partner With Us
-                  </Link>
-                </div>
-
-                <div className="overlay"></div>
-              </div>
-            </div>
-          ))}
-        </Slider>
-
+        <video className="hero-video" autoPlay loop muted playsInline>
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+          <h1>Universal Solar Power Systems</h1>
+          <p>Leading solutions in power management and industrial energy systems.</p>
+          <Link to="/universal-power-systems" className="cta-button" style={{ marginTop: '1rem', display: 'inline-block' }}>
+            Partner With Us
+          </Link>
+        </div>
       </section>
 
       <section className="section-container" style={{ backgroundColor: '#fff', paddingBottom: '2rem' }}>
