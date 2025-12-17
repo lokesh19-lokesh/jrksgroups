@@ -27,51 +27,74 @@ const Career = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
 
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
-
-    setFormData((prev) => ({
-      ...prev,
-      [name]: files ? files[0] : value
-    }));
-  };
-
-
   const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    address: "",
-    role: "",
-    resume: null
-  });
+  name: "",
+  phone: "",
+  email: "",
+  address: "",
+  role: "",
+  resume: null
+});
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true); // start loade
-    const form = new FormData();
-    form.append("name", formData.name);
-    form.append("email", formData.email);
-    form.append("phone", formData.phone);
-    form.append("address", formData.address);
-    form.append("role", selectedJob.title);
-    form.append("resume", formData.resume);
+const handleChange = (e) => {
+  const { name, value, files } = e.target;
 
-    const res = await fetch("http://localhost:5000/apply", {
+  setFormData((prev) => ({
+    ...prev,
+    [name]: files ? files[0] : value
+  }));
+};
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+
+  const form = new FormData();
+  form.append("name", formData.name);
+  form.append("email", formData.email);
+  form.append("phone", formData.phone);
+  form.append("address", formData.address);
+  form.append("role", selectedJob.title);
+  form.append("resume", formData.resume);
+
+  try {
+    const res = await fetch("http://localhost/apply.php", {
       method: "POST",
       body: form,
     });
 
-    const data = await res.json();
+    const text = await res.text();      // 👈 read raw text first
+    console.log("RAW RESPONSE FROM PHP:", text);
+
+    let data;
+    try {
+      data = JSON.parse(text);          // 👈 try to parse JSON
+    } catch (err) {
+      console.error("JSON parse error:", err);
+      alert("Server returned invalid response");
+      setLoading(false);
+      return;
+    }
+
+    console.log("PARSED JSON:", data);
+
     setLoading(false);
 
     if (data.success) {
       setShowApplicationForm(false);
       setSubmitSuccess(true);
     } else {
-      alert("Something went wrong. Try again!");
+      alert("Something went wrong: " + (data.error || "Try again!"));
     }
-  };
+  } catch (error) {
+    console.error("Fetch error:", error);
+    alert("Unable to connect to server");
+    setLoading(false);
+  }
+};
+
+
 
   // Form data
 
@@ -553,8 +576,34 @@ const Career = () => {
             {/* BODY */}
             <div style={{ padding: "2rem" }}>
 
-              {/* JOB DETAILS VIEW */}
-              {!showApplicationForm ? (
+              {submitSuccess ? (
+
+      // SUCCESS POPUP
+      <div style={{
+        textAlign: "center",
+        animation: "fadeIn 0.3s ease-out"
+      }}>
+        <h2 style={{ color: "green" }}>✔ Form Submitted Successfully!</h2>
+        <p>You will receive a verification email shortly.</p>
+
+        <button
+          onClick={() => {
+            setSubmitSuccess(false);
+            setSelectedJob(null);
+          }}
+          style={{
+            padding: "0.8rem 1.5rem",
+            backgroundColor: "#003366",
+            color: "white",
+            borderRadius: "6px",
+            cursor: "pointer"
+          }}
+        >
+          Close
+        </button>
+      </div>
+
+  ) : !showApplicationForm ? (
                 <>
                   <div
                     style={{
@@ -752,40 +801,7 @@ const Career = () => {
                 </form>
 
               )}
-              {submitSuccess && (
-                <div style={{
-                  padding: "2rem",
-                  textAlign: "center",
-                  animation: "fadeIn 0.3s ease-out"
-                }}>
-                  <h2 style={{ color: "green", marginBottom: "1rem" }}>
-                    ✔ Form Submitted Successfully!
-                  </h2>
-
-                  <p style={{ color: "#444", marginBottom: "1rem" }}>
-                    You will receive a verification email shortly.<br />
-                    Please check your inbox.
-                  </p>
-
-                  <button
-                    onClick={() => {
-                      setSubmitSuccess(false);
-                      setSelectedJob(null); // close modal
-                    }}
-                    style={{
-                      padding: "0.8rem 1.5rem",
-                      backgroundColor: "#003366",
-                      color: "white",
-                      border: "none",
-                      borderRadius: "6px",
-                      cursor: "pointer",
-                      marginTop: "1rem"
-                    }}
-                  >
-                    Close
-                  </button>
-                </div>
-              )}
+             
 
             </div>
           </div>

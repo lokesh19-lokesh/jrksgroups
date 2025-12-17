@@ -49,7 +49,7 @@ const NewsMedia = () => {
 
       {/* Hero Section */}
       <section className="news-hero">
-        <div className="news-hero-bg"></div>
+        <div className="news-hero-bg news"></div>
         <div className="section-container news-hero-content">
           <div style={{ maxWidth: '600px', margin: '0 auto 0 0' }}>
             <div style={{

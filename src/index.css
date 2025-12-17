@@ -586,7 +586,7 @@ body.dark-mode .search-overlay input {
 
 .hero-content {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 100%;
@@ -595,8 +595,10 @@ body.dark-mode .search-overlay input {
 
 .hero-content h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
   color: white;
+  line-height: 1.2;
+  text-transform: uppercase;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
@@ -1418,12 +1420,41 @@ body.dark-mode .search-overlay input {
   right: 0;
   width: 60%;
   height: 100%;
-  background-image: url('/src/assets/nm.avif');
+
   background-size: cover;
   background-position: center;
   clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
 }
-
+.news-hero-bg.news{
+  background-image: url('/src/assets/nm.avif');
+}
+.news-hero-bg.about{
+  background-image: url('/src/assets/nm.avif');
+}
+.news-hero-bg.power{
+  background-image: url('https://images.unsplash.com/photo-1513828583688-c52646db42da?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+}
+.news-hero-bg.cancer{
+  background-image: url('https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+}
+.news-hero-bg.surya{
+  background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+}
+.news-hero-bg.sri{
+  background-image: url('/src/assets/student.avif');
+}
+.news-hero-bg.nrs{
+  background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+}
+.news-hero-bg.jrks{
+  background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+}
+.news-hero-bg.industry{
+  background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+}
+.news-hero-bg.contact{
+  background-image: url('/src/assets/contact.jpg');
+}
 .news-hero-content {
   position: relative;
   z-index: 2;
