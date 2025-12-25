@@ -25,7 +25,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="universal-power-systems" element={<UniversalPowerSystems />} />
           <Route path="jrks-traders" element={<JrksTraders />} />
-          <Route path="nrs-first-capital" element={<NrsFirstCapital />} />
+          <Route path="nrs-trust-capital" element={<NrsFirstCapital />} />
           <Route path="jrks-industrial-consultant-services" element={<JrksIndustrialConsultantServices />} />
           <Route path="career" element={<Career />} />
           <Route path="contact" element={<Contact />} />

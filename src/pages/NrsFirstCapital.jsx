@@ -57,7 +57,7 @@ const NrsFirstCapital = () => {
       <div style={{ padding: '1rem 5%', backgroundColor: '#f8f9fa', fontSize: '0.9rem', borderBottom: '1px solid #e9ecef' }}>
         <Link to="/" style={{ textDecoration: 'none', color: '#6c757d' }}>Home</Link>
         <span style={{ margin: '0 0.5rem', color: '#6c757d' }}>&gt;</span>
-        <span style={{ color: accentColor, fontWeight: '600' }}>NRS First Capital</span>
+        <span style={{ color: accentColor, fontWeight: '600' }}>NRS Trust Capital</span>
       </div>
 
       {/* Hero Section */}
@@ -74,7 +74,7 @@ const NrsFirstCapital = () => {
               marginBottom: '2rem'
             }}></div>
             <h1 className="news-hero-title">
-              NRS First Capital
+              NRS Trust Capital
             </h1>
             <p className="news-hero-subtitle">
              Your Partner in Financial Growth and Security.
@@ -258,7 +258,7 @@ const NrsFirstCapital = () => {
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h2 style={{ marginBottom: '1.5rem', fontSize: '2.5rem', fontWeight: '300', textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>Secure Your Financial Future</h2>
           <p style={{ fontSize: '1.2rem', marginBottom: '2.5rem', opacity: '0.9' }}>
-            Contact NRS First Capital for expert financial advice and capital solutions.
+            Contact NRS Trust Capital for expert financial advice and capital solutions.
           </p>
           <Link to="/contact" style={{
             display: 'inline-block',
