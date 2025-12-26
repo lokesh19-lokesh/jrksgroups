@@ -65,7 +65,7 @@ const Home = () => {
     {
       title: "NRS TRUST Capital",
       description: "Financial services and capital management for sustainable growth.",
-      link: "/nrs-first-capital",
+      link: "/nrs-trust-capital",
       image: NRSFirstCapital,
       bgColor: "#0056b3",
       textColor: "#ffffff"

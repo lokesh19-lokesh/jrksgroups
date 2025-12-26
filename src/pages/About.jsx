@@ -22,7 +22,7 @@ const About = () => {
     {
       title: "NRS First Capital",
       desc: "Your partner in financial growth, providing tailored loan services (Housing, Personal, Business) and comprehensive insurance solutions.",
-      link: "/nrs-first-capital",
+      link: "/nrs-trust-capital",
       color: "#0056b3"
     },
     {
