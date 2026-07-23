@@ -304,6 +304,16 @@ const handleSubmit = async (e) => {
         title="Careers"
         description="Explore job openings and internships across JRKS Group of Companies. Join us in shaping the future."
         keywords="Careers, Jobs, Internships, JRKS Group, Employment, Work With Us"
+        url="https://jrksgroup.com/careers"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "JRKSGROUP Careers",
+            "description": "Job openings and internships at JRKSGROUP.",
+            "url": "https://jrksgroup.com/careers"
+          }
+        ]}
       />
 
       {/* Breadcrumbs */}

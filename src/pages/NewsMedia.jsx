@@ -44,7 +44,17 @@ const NewsMedia = () => {
     <div className="news-media-page">
       <SEO
         title="News & Media"
-        description="Latest insights, updates, and press releases from Jrks Group."
+        description="Latest insights, updates, and press releases from JRKSGROUP."
+        url="https://jrksgroup.com/news-media"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "JRKSGROUP News & Media",
+            "description": "Latest updates and press releases.",
+            "url": "https://jrksgroup.com/news-media"
+          }
+        ]}
       />
 
       {/* Hero Section */}

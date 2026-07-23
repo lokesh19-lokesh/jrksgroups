@@ -44,9 +44,36 @@ const JrksIndustrialConsultantServices = () => {
   return (
     <div className="jrks-consultant-page" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: '#333', backgroundColor: '#fff' }}>
       <SEO
-        title="Jrks Industrial Consultant Services"
-        description="Expert industrial consultancy to optimize your business operations."
+        title="JRKS Industrial Consultant Services"
+        description="Expert industrial consultancy to optimize your business operations. Services include Process Optimization, Supply Chain Management, and Regulatory Compliance."
         keywords="Industrial Consultancy, Process Optimization, Supply Chain Management, Regulatory Compliance"
+        url="https://jrksgroup.com/jrks-industrial-consultant-services"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Industrial Consultancy",
+            "provider": {
+              "@type": "Organization",
+              "name": "JRKSGROUP"
+            },
+            "description": "Expert industrial consultancy to optimize your business operations."
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What industrial consultancy services does JRKSGROUP offer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We offer Process Optimization, Supply Chain Management, Regulatory Compliance, and Technology Integration services to enhance industrial efficiency."
+                }
+              }
+            ]
+          }
+        ]}
       />
 
       {/* Breadcrumbs */}
@@ -222,6 +249,22 @@ const JrksIndustrialConsultantServices = () => {
 
         </main>
       </div>
+
+      {/* Answer Engine Optimization (AEO) - FAQ Section */}
+      <section className="section-container" style={{ backgroundColor: '#f9f9f9', padding: '4rem 2rem' }}>
+        <div className="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <div className="divider"></div>
+        </div>
+        <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <details style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+            <summary style={{ fontWeight: 'bold', fontSize: '1.2rem', cursor: 'pointer', color: accentColor }}>What industrial consultancy services does JRKSGROUP offer?</summary>
+            <p style={{ marginTop: '1rem', color: '#555', lineHeight: '1.6' }}>
+              We offer Process Optimization, Supply Chain Management, Regulatory Compliance, and Technology Integration services to enhance industrial efficiency. Our experienced consultants work closely with you to identify bottlenecks and implement tailored strategies.
+            </p>
+          </details>
+        </div>
+      </section>
 
       {/* Call to Action - Full Width */}
       <section style={{

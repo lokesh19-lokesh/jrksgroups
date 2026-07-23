@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const About = () => {
   useEffect(() => {
@@ -47,6 +48,20 @@ const About = () => {
 
   return (
     <div className="about-page">
+      <SEO
+        title="About Us"
+        description="Learn about JRKSGROUP's journey, vision, and mission. A diversified conglomerate in Steel Trading, Renewable Energy, Finance, Infrastructure, and Education."
+        url="https://jrksgroup.com/about"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About JRKSGROUP",
+            "description": "Information about the history, vision, and mission of JRKSGROUP.",
+            "url": "https://jrksgroup.com/about"
+          }
+        ]}
+      />
       {/* Hero Section */}
     
 

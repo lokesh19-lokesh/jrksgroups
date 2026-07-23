@@ -32,8 +32,41 @@ const UniversalCancerScreening = () => {
     <div className="universal-cancer-screening-page" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: '#333', backgroundColor: '#fff' }}>
       <SEO
         title="Universal Cancer Screening"
-        description="Early detection saves lives. Comprehensive screening programs led by Dr. Lakshmi."
+        description="Early detection saves lives. Comprehensive screening programs led by Dr. Lakshmi, including Breast and Cervical Cancer screenings."
         keywords="Cancer Screening, Breast Cancer, Cervical Cancer, Dr. Lakshmi, Early Detection"
+        url="https://jrksgroup.com/universal-cancer-screening"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "MedicalOrganization",
+            "name": "Universal Cancer Screening",
+            "image": "https://jrksgroup.com/logo.png",
+            "url": "https://jrksgroup.com/universal-cancer-screening",
+            "description": "Comprehensive cancer screening programs led by Dr. Lakshmi."
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Why is cancer screening important?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Screening tests can help find cancer at an early stage, before symptoms appear, making it easier to treat or cure."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What are the key cancer screening areas you cover?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We focus on breast cancer (mammograms), cervical cancer (Pap and HPV tests), and awareness for ovarian and uterine cancer."
+                }
+              }
+            ]
+          }
+        ]}
       />
 
       {/* Breadcrumbs */}
@@ -252,6 +285,28 @@ const UniversalCancerScreening = () => {
 
         </main>
       </div>
+
+      {/* Answer Engine Optimization (AEO) - FAQ Section */}
+      <section className="section-container" style={{ backgroundColor: '#f9f9f9', padding: '4rem 2rem' }}>
+        <div className="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <div className="divider"></div>
+        </div>
+        <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <details style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+            <summary style={{ fontWeight: 'bold', fontSize: '1.2rem', cursor: 'pointer', color: accentColor }}>Why is cancer screening important?</summary>
+            <p style={{ marginTop: '1rem', color: '#555', lineHeight: '1.6' }}>
+              Screening tests can help find cancer at an early stage, before symptoms appear, making it easier to treat or cure. By the time symptoms appear, the cancer may have grown and spread.
+            </p>
+          </details>
+          <details style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+            <summary style={{ fontWeight: 'bold', fontSize: '1.2rem', cursor: 'pointer', color: accentColor }}>What are the key cancer screening areas you cover?</summary>
+            <p style={{ marginTop: '1rem', color: '#555', lineHeight: '1.6' }}>
+              We focus heavily on breast cancer through mammograms and cervical cancer through Pap and HPV tests, alongside providing vital awareness and guidance for ovarian and uterine cancers.
+            </p>
+          </details>
+        </div>
+      </section>
 
       {/* Call to Action */}
       <section style={{

@@ -45,8 +45,41 @@ const SuryaProjects = () => {
     <div className="surya-projects-page" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: '#333', backgroundColor: '#fff' }}>
       <SEO
         title="Surya Projects"
-        description="Specializing in Civil, Electrical, Railway, and Government infrastructure projects."
+        description="Specializing in Civil, Electrical, Railway, and Government infrastructure projects. We build the nation's infrastructure with precision and integrity."
         keywords="Civil Contracts, Electrical Contracts, Railway Projects, Government Infrastructure, NMDC Projects"
+        url="https://jrksgroup.com/surya-projects"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Surya Projects",
+            "image": "https://jrksgroup.com/logo.png",
+            "url": "https://jrksgroup.com/surya-projects",
+            "description": "Specializing in Civil, Electrical, Railway, and Government infrastructure projects.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "123 Corporate Park, Financial District",
+              "addressLocality": "Hyderabad",
+              "addressRegion": "Telangana",
+              "postalCode": "500032",
+              "addressCountry": "IN"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What type of projects does Surya Projects handle?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We handle Civil Contract Works, Electrical Contract Works, Central Government Projects, Railway Contracts, and infrastructure for NMDC."
+                }
+              }
+            ]
+          }
+        ]}
       />
 
       {/* Breadcrumbs */}
@@ -224,6 +257,22 @@ const SuryaProjects = () => {
 
         </main >
       </div >
+
+      {/* Answer Engine Optimization (AEO) - FAQ Section */}
+      <section className="section-container" style={{ backgroundColor: '#f9f9f9', padding: '4rem 2rem' }}>
+        <div className="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <div className="divider"></div>
+        </div>
+        <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <details style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+            <summary style={{ fontWeight: 'bold', fontSize: '1.2rem', cursor: 'pointer', color: '#8B0000' }}>What type of projects does Surya Projects handle?</summary>
+            <p style={{ marginTop: '1rem', color: '#555', lineHeight: '1.6' }}>
+              We specialize in large-scale infrastructure projects including Civil & Electrical Works, Central Government Projects, Railway track laying and station modernization, and heavy mining infrastructure for NMDC.
+            </p>
+          </details>
+        </div>
+      </section>
 
       {/* Call to Action - Full Width */}
       < section style={{

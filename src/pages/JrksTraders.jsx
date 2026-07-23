@@ -44,9 +44,51 @@ const JrksTraders = () => {
   return (
     <div className="jrks-traders-page" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: '#333', backgroundColor: '#fff' }}>
       <SEO
-        title="Jrks Traders"
-        description="Trusted partner for steel trading and industrial raw materials."
+        title="JRKS Traders"
+        description="Trusted partner for steel trading and industrial raw materials. Authorized dealer for SAIL, Jindal, and Solar Electronics."
         keywords="Steel Trading, Industrial Raw Materials, SAIL Dealer, Jindal Dealer, Solar Electronics"
+        url="https://jrksgroup.com/jrks-traders"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "JRKS Traders",
+            "image": "https://jrksgroup.com/logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "123 Corporate Park, Financial District",
+              "addressLocality": "Hyderabad",
+              "addressRegion": "Telangana",
+              "postalCode": "500032",
+              "addressCountry": "IN"
+            },
+            "telephone": "+91-9390800446",
+            "url": "https://jrksgroup.com/jrks-traders",
+            "description": "Trusted partner for steel trading and industrial raw materials."
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What brands does JRKS Traders deal with?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "JRKS Traders is an authorized dealer for premium brands like Steel Authority of India (SAIL) and Jindal Steel, ensuring the highest quality for construction and industrial materials."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you provide solar infrastructure components?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we supply a comprehensive range of solar electronics including panels, inverters, and mounting structures for renewable energy projects."
+                }
+              }
+            ]
+          }
+        ]}
       />
 
       {/* Breadcrumbs */}
@@ -229,6 +271,28 @@ const JrksTraders = () => {
 
         </main>
       </div>
+
+      {/* Answer Engine Optimization (AEO) - FAQ Section */}
+      <section className="section-container" style={{ backgroundColor: '#f9f9f9', padding: '4rem 2rem' }}>
+        <div className="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <div className="divider"></div>
+        </div>
+        <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <details style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+            <summary style={{ fontWeight: 'bold', fontSize: '1.2rem', cursor: 'pointer', color: accentColor }}>What brands does JRKS Traders deal with?</summary>
+            <p style={{ marginTop: '1rem', color: '#555', lineHeight: '1.6' }}>
+              JRKS Traders is an authorized dealer for premium brands like Steel Authority of India (SAIL) and Jindal Steel, ensuring the highest quality for construction and industrial materials.
+            </p>
+          </details>
+          <details style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+            <summary style={{ fontWeight: 'bold', fontSize: '1.2rem', cursor: 'pointer', color: accentColor }}>Do you provide solar infrastructure components?</summary>
+            <p style={{ marginTop: '1rem', color: '#555', lineHeight: '1.6' }}>
+              Yes, we supply a comprehensive range of solar electronics including panels, inverters, cables, and mounting structures for both residential and commercial renewable energy projects.
+            </p>
+          </details>
+        </div>
+      </section>
 
       {/* Call to Action - Full Width */}
       <section style={{

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Contact = () => {
   useEffect(() => {
@@ -15,6 +16,36 @@ const Contact = () => {
         <span style={{ margin: '0 0.5rem', color: '#6c757d' }}>&gt;</span>
         <span style={{ color: '#003366', fontWeight: '600' }}>Contact Us</span>
       </div>
+
+      <SEO
+        title="Contact Us"
+        description="Get in touch with JRKSGROUP. Reach out to our corporate office in Hyderabad for any business inquiries or partnership opportunities."
+        url="https://jrksgroup.com/contact"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact JRKSGROUP",
+            "description": "Contact details for JRKSGROUP corporate office."
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "JRKSGROUP",
+            "image": "https://jrksgroup.com/logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "123 Corporate Park, Financial District",
+              "addressLocality": "Hyderabad",
+              "addressRegion": "Telangana",
+              "postalCode": "500032",
+              "addressCountry": "IN"
+            },
+            "telephone": "+91-9390800446",
+            "url": "https://jrksgroup.com"
+          }
+        ]}
+      />
 
      
 
@@ -55,10 +86,10 @@ const Contact = () => {
                 <div style={{ fontSize: '1.5rem', color: '#D4AF37', marginTop: '3px' }}>📍</div>
                 <div>
                   <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem' }}>Corporate Office</h4>
-                  <p style={{ margin: 0, color: '#666' }}>
+                  <address style={{ margin: 0, color: '#666', fontStyle: 'normal' }}>
                     123 Corporate Park, Financial District,<br />
                     Hyderabad, Telangana, India - 500032
-                  </p>
+                  </address>
                 </div>
               </div>
 

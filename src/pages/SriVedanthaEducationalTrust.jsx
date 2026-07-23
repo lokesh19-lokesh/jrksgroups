@@ -45,8 +45,33 @@ const SriVedanthaEducationalTrust = () => {
     <div className="educational-trust-page" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: '#333', backgroundColor: '#fff' }}>
       <SEO
         title="Sri Vedantha Educational Trust"
-        description="Empowering the future through education and academic excellence."
+        description="Empowering the future through education and academic excellence. Providing scholarships, skill development, and community outreach programs."
         keywords="Education, Scholarship, Skill Development, Community Outreach, Vocational Training"
+        url="https://jrksgroup.com/sri-vedantha-educational-trust"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "NGO",
+            "name": "Sri Vedantha Educational Trust",
+            "image": "https://jrksgroup.com/logo.png",
+            "url": "https://jrksgroup.com/sri-vedantha-educational-trust",
+            "description": "Empowering the future through education and academic excellence."
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What programs does Sri Vedantha Educational Trust offer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We offer quality education programs, skill development & vocational training, scholarships for meritorious students, and community outreach initiatives."
+                }
+              }
+            ]
+          }
+        ]}
       />
 
       {/* Breadcrumbs */}
@@ -220,6 +245,22 @@ const SriVedanthaEducationalTrust = () => {
 
         </main>
       </div>
+
+      {/* Answer Engine Optimization (AEO) - FAQ Section */}
+      <section className="section-container" style={{ backgroundColor: '#f9f9f9', padding: '4rem 2rem' }}>
+        <div className="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <div className="divider"></div>
+        </div>
+        <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <details style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+            <summary style={{ fontWeight: 'bold', fontSize: '1.2rem', cursor: 'pointer', color: accentColor }}>What programs does Sri Vedantha Educational Trust offer?</summary>
+            <p style={{ marginTop: '1rem', color: '#555', lineHeight: '1.6' }}>
+              We offer a variety of programs including quality education support, skill development and vocational training, scholarships for underprivileged and meritorious students, and community outreach initiatives.
+            </p>
+          </details>
+        </div>
+      </section>
 
       {/* Call to Action - Full Width */}
       <section style={{

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const FraudAlert = () => {
   useEffect(() => {
@@ -8,6 +9,11 @@ const FraudAlert = () => {
 
   return (
     <div className="fraud-alert-page" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: '#333', backgroundColor: '#fff' }}>
+      <SEO
+        title="Fraud Alert"
+        description="Important information regarding fraudulent activities. JRKSGROUP does not authorize third-party agencies to collect money on our behalf."
+        url="https://jrksgroup.com/fraud-alert"
+      />
 
       {/* Breadcrumbs */}
       <div style={{ padding: '1rem 5%', backgroundColor: '#f8f9fa', fontSize: '0.9rem', borderBottom: '1px solid #e9ecef' }}>

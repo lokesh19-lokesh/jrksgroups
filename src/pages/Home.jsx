@@ -104,25 +104,51 @@ const Home = () => {
     }
   ];
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Jrks Group",
-    "url": "https://www.jrksgroup.com",
-    "logo": "https://www.jrksgroup.com/assets/logo.png",
-    "description": "Jrks Group is a diversified conglomerate with a commanding presence in Steel Trading, Power Systems, Financial Services, Industrial Consultancy, Infrastructure, and Education.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Hyderabad",
-      "addressRegion": "Telangana",
-      "addressCountry": "IN"
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "JRKSGROUP",
+      "url": "https://www.jrksgroup.com",
+      "logo": "https://www.jrksgroup.com/logo.png",
+      "description": "JRKSGROUP is a diversified conglomerate with a commanding presence in Steel Trading, Power Systems, Financial Services, Industrial Consultancy, Infrastructure, and Education.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Corporate Park, Financial District",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "postalCode": "500032",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9390800446",
+        "contactType": "customer service"
+      }
     },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-1234567890",
-      "contactType": "customer service"
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What services does JRKSGROUP provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "JRKSGROUP offers a wide range of services including Universal Solar Power Systems, JRKS Traders (Steel Trading), NRS Trust Capital (Financial Services), Industrial Consultant Services, Surya Projects (Infrastructure), Sri Vedantha Educational Trust, and Universal Cancer Screening."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is JRKSGROUP headquartered?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "JRKSGROUP is headquartered in Hyderabad, Telangana, India, with operations spanning across various sectors."
+          }
+        }
+      ]
     }
-  };
+  ];
 
   return (
     <div>
@@ -234,6 +260,28 @@ const Home = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Answer Engine Optimization (AEO) - FAQ Section */}
+      <section className="section-container" style={{ backgroundColor: '#f9f9f9', padding: '4rem 2rem' }}>
+        <div className="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <div className="divider"></div>
+        </div>
+        <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <details style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+            <summary style={{ fontWeight: 'bold', fontSize: '1.2rem', cursor: 'pointer', color: '#003366' }}>What services does JRKSGROUP provide?</summary>
+            <p style={{ marginTop: '1rem', color: '#555', lineHeight: '1.6' }}>
+              JRKSGROUP offers a comprehensive range of services across multiple sectors, including Universal Solar Power Systems, JRKS Traders (Steel Trading and raw materials), NRS Trust Capital (Financial Services), Industrial Consultant Services, Surya Projects (Infrastructure and Engineering), Sri Vedantha Educational Trust, and Universal Cancer Screening.
+            </p>
+          </details>
+          <details style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+            <summary style={{ fontWeight: 'bold', fontSize: '1.2rem', cursor: 'pointer', color: '#003366' }}>Where is JRKSGROUP headquartered?</summary>
+            <p style={{ marginTop: '1rem', color: '#555', lineHeight: '1.6' }}>
+              Our corporate office is headquartered in the Financial District of Hyderabad, Telangana, India. From here, we coordinate our nationwide and global operations, driving value and innovation across all our specialized verticals.
+            </p>
+          </details>
         </div>
       </section>
     </div>

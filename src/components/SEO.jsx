@@ -1,49 +1,47 @@
-import { useEffect } from 'react';
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
-const SEO = ({ title, description, keywords, schema }) => {
+const SEO = ({ title, description, keywords, schema, url = 'https://www.jrksgroup.com' }) => {
   const siteTitle = "JRKSGROUP";
+  const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+  const metaDesc = description || "JRKSGROUP is a diversified conglomerate with a commanding presence in Steel Trading, Power Systems, Financial Services, Industrial Consultancy, Infrastructure, and Education.";
+  const metaKeywords = keywords || "JRKSGROUP, Steel, Power, Finance, Education, Infrastructure, Consultant";
 
-  useEffect(() => {
-    // Update Title
-    document.title = title ? `${title} | ${siteTitle}` : siteTitle;
+  return (
+    <Helmet>
+      {/* Standard Meta Tags */}
+      <title>{fullTitle}</title>
+      <meta name="description" content={metaDesc} />
+      <meta name="keywords" content={metaKeywords} />
 
-    // Update Meta Description
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = "description";
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.content = description || "JRKSGROUP - A diversified conglomerate.";
+      {/* Open Graph (Facebook, LinkedIn) */}
+      <meta property="og:title" content={fullTitle} />
+      <meta property="og:description" content={metaDesc} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={url} />
+      <meta property="og:image" content="https://www.jrksgroup.com/logo.png" />
+      <meta property="og:site_name" content={siteTitle} />
 
-    // Update Meta Keywords
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.name = "keywords";
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.content = keywords || "JRKSGROUP, Steel, Power, Finance";
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={metaDesc} />
+      <meta name="twitter:image" content="https://www.jrksgroup.com/logo.png" />
 
-    // Add Structured Data (JSON-LD)
-    if (schema) {
-      let script = document.querySelector('script[type="application/ld+json"]');
-      if (!script) {
-        script = document.createElement('script');
-        script.type = "application/ld+json";
-        document.head.appendChild(script);
-      }
-      script.text = JSON.stringify(schema);
-    }
+      {/* GEO Meta Tags (Local SEO) */}
+      <meta name="geo.region" content="IN-TG" />
+      <meta name="geo.placename" content="Hyderabad" />
+      <meta name="geo.position" content="17.4123;78.3370" />
+      <meta name="ICBM" content="17.4123, 78.3370" />
 
-    // Cleanup function to reset title/meta when component unmounts (optional, but good practice)
-    return () => {
-      // We generally don't want to clear description/keywords on unmount as the next page will set them,
-      // but we could reset title if needed. For now, we leave it.
-    };
-  }, [title, description, keywords, schema]);
-
-  return null; // This component renders nothing
+      {/* Schema.org JSON-LD (AEO & Rich Snippets) */}
+      {schema && (
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      )}
+    </Helmet>
+  );
 };
 
 export default SEO;

@@ -49,8 +49,49 @@ const NrsFirstCapital = () => {
     <div className="nrs-first-capital-page" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: '#333', backgroundColor: '#fff' }}>
       <SEO
         title="NRS TRUST Capital"
-        description="Financial services and capital management for sustainable growth."
+        description="Financial services and capital management for sustainable growth. House loans, personal loans, and insurance solutions."
         keywords="Financial Services, Capital Management, Loans, Insurance, Wealth Management"
+        url="https://jrksgroup.com/nrs-trust-capital"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "FinancialService",
+            "name": "NRS TRUST Capital",
+            "image": "https://jrksgroup.com/logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "123 Corporate Park, Financial District",
+              "addressLocality": "Hyderabad",
+              "addressRegion": "Telangana",
+              "postalCode": "500032",
+              "addressCountry": "IN"
+            },
+            "telephone": "+91-9390800446",
+            "url": "https://jrksgroup.com/nrs-trust-capital"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What financial services does NRS Trust Capital offer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We offer a wide range of financial services including House Loans, Personal Loans, Business Loans, Project Funding, and Financial Advising."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which banking partners does NRS Trust Capital work with?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We collaborate with leading financial institutions like SBI, HDFC, KOTAK, and INDUSIND to offer you the best rates and services."
+                }
+              }
+            ]
+          }
+        ]}
       />
 
       {/* Breadcrumbs */}
@@ -247,6 +288,28 @@ const NrsFirstCapital = () => {
 
         </main>
       </div>
+
+      {/* Answer Engine Optimization (AEO) - FAQ Section */}
+      <section className="section-container" style={{ backgroundColor: '#f9f9f9', padding: '4rem 2rem' }}>
+        <div className="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <div className="divider"></div>
+        </div>
+        <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <details style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+            <summary style={{ fontWeight: 'bold', fontSize: '1.2rem', cursor: 'pointer', color: accentColor }}>What financial services does NRS Trust Capital offer?</summary>
+            <p style={{ marginTop: '1rem', color: '#555', lineHeight: '1.6' }}>
+              We offer a wide range of financial services including House Loans, Personal Loans, Business Loans, Project Funding, and Financial Advising.
+            </p>
+          </details>
+          <details style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+            <summary style={{ fontWeight: 'bold', fontSize: '1.2rem', cursor: 'pointer', color: accentColor }}>Which banking partners does NRS Trust Capital work with?</summary>
+            <p style={{ marginTop: '1rem', color: '#555', lineHeight: '1.6' }}>
+              We collaborate with leading financial institutions like SBI, HDFC, KOTAK, and INDUSIND to offer you the best rates and services tailored to your personal and business needs.
+            </p>
+          </details>
+        </div>
+      </section>
 
       {/* Call to Action - Full Width */}
       <section style={{

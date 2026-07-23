@@ -48,6 +48,39 @@ const UniversalPowerSystems = () => {
         title="Universal Solar Power Systems"
         description="Leading solutions in power management, UPS systems, industrial batteries, and solar integration."
         keywords="UPS, Industrial Batteries, Solar Power, Power Management, Energy Solutions"
+        url="https://jrksgroup.com/universal-solar-power-systems"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Universal Solar Power Systems",
+            "image": "https://jrksgroup.com/logo.png",
+            "url": "https://jrksgroup.com/universal-solar-power-systems",
+            "description": "Leading solutions in power management, UPS systems, industrial batteries, and solar integration.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "123 Corporate Park, Financial District",
+              "addressLocality": "Hyderabad",
+              "addressRegion": "Telangana",
+              "postalCode": "500032",
+              "addressCountry": "IN"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What power solutions do you provide?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We provide comprehensive power management solutions including uninterrupted power supply (UPS) systems, industrial batteries, and solar power integration."
+                }
+              }
+            ]
+          }
+        ]}
       />
 
       {/* Breadcrumbs */}
@@ -275,6 +308,22 @@ const UniversalPowerSystems = () => {
 
         </main>
       </div>
+
+      {/* Answer Engine Optimization (AEO) - FAQ Section */}
+      <section className="section-container" style={{ backgroundColor: '#f9f9f9', padding: '4rem 2rem' }}>
+        <div className="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <div className="divider"></div>
+        </div>
+        <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <details style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+            <summary style={{ fontWeight: 'bold', fontSize: '1.2rem', cursor: 'pointer', color: accentColor }}>What power solutions do you provide?</summary>
+            <p style={{ marginTop: '1rem', color: '#555', lineHeight: '1.6' }}>
+              We specialize in top-tier power management solutions tailored to the needs of modern industries, including UPS systems, industrial batteries, solar integrations, and ongoing maintenance.
+            </p>
+          </details>
+        </div>
+      </section>
 
       {/* Call to Action - Full Width */}
       <section style={{
